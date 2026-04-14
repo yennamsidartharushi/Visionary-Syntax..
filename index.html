@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Visionary Syntax. | Premium Assets & Best AI Prompts</title>
+    <meta name="description" content="Discover the best AI prompts and Instagram AI prompts to elevate your digital workflow. Download high-fidelity creative blueprints.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#050505',      // OLED Black for Dark Mode
+                            surface: '#0a0a0c',   // Slightly elevated dark surface
+                            card: '#0f0f11',      // Dark card background
+                            border: '#1f1f22',    // Subtle dark border
+                            primary: '#2563eb',   // Clean Blue Accent
+                            primaryHover: '#1d4ed8',
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 4px 40px rgba(0, 0, 0, 0.05)',
+                        'premium-dark': '0 10px 50px rgba(0, 0, 0, 0.5)',
+                        'glow': '0 0 20px rgba(37, 99, 235, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* --- GLOBAL MOBILE SAFETY FIXES --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        img, video, svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        html, body { 
+            overflow-x: hidden !important;
+            overflow-x: clip !important; 
+            max-width: 100% !important;
+            width: 100%; 
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth; 
+            font-family: 'Inter', sans-serif; 
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        h1, h2, h3, h4, .font-heading { font-family: 'Montserrat', sans-serif; }
+        
+        /* Premium minimal scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 10px; }
+        .dark ::-webkit-scrollbar-thumb { background: #1d4ed8; }
+
+        /* Timer SVG Animation Helper */
+        .timer-ring { transition: stroke-dashoffset 1s linear; }
+
+        /* --- PREMIUM INTRO ANIMATION --- */
+        #intro-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: #050505;
+            z-index: 999999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+            transform-origin: top;
+            width: 100%;
+        }
+        .intro-text-wrap {
+            overflow: hidden; 
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+        .intro-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: -0.04em;
+            transform: translateY(120%);
+            opacity: 0;
+            animation: revealText 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            text-shadow: 0 0 40px rgba(37, 99, 235, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 100%;
+        }
+        @media (min-width: 768px) { 
+            .intro-text { font-size: 4.5rem; flex-direction: row; justify-content: center; gap: 1rem; } 
+        }
+        @keyframes revealText {
+            0% { transform: translateY(120%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        .intro-loading-bar {
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #2563eb, transparent);
+            margin-top: 20px;
+            transition: width 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+            box-shadow: 0 0 10px #2563eb;
+        }
+        .intro-subtitle {
+            margin-top: 15px;
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #9ca3af;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 0.5s;
+        }
+        @media (min-width: 768px) {
+             .intro-subtitle { font-size: 11px; letter-spacing: 0.3em; }
+        }
+        @keyframes fadeIn { to { opacity: 1; } }
+        
+        .intro-slide-up {
+            transform: translateY(-100%);
+            pointer-events: none;
+        }
+
+        /* --- Pearl Button Custom CSS --- */
+        .pearl-btn {
+          --white: #ffe7ff;
+          --bg: #080808;
+          --radius: 100px;
+          outline: none;
+          cursor: pointer;
+          border: 0;
+          position: relative;
+          border-radius: var(--radius);
+          background-color: var(--bg);
+          transition: all 0.2s ease;
+          box-shadow:
+            inset 0 0.3rem 0.9rem rgba(255, 255, 255, 0.3),
+            inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
+            inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.5),
+            0 2rem 2rem rgba(0, 0, 0, 0.3),
+            0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+          display: inline-block;
+          text-decoration: none;
+          width: 100%;
+          max-width: 280px;
+        }
+        @media (min-width: 640px) {
+             .pearl-btn { width: auto; max-width: 300px; }
+        }
+        .pearl-btn .wrap {
+          font-size: 14px;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.85);
+          padding: 14px 24px;
+          border-radius: inherit;
+          position: relative;
+          overflow: hidden;
+        }
+        @media (min-width: 640px) {
+             .pearl-btn .wrap { font-size: 15px; padding: 16px 36px; }
+        }
+        .pearl-btn .wrap p span:nth-child(2) { display: none; }
+        .pearl-btn:hover .wrap p span:nth-child(1) { display: none; }
+        .pearl-btn:hover .wrap p span:nth-child(2) { display: inline-block; }
+        
+        .pearl-btn .wrap p {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          margin: 0;
+          transition: all 0.2s ease;
+          transform: translateY(2%);
+          mask-image: linear-gradient(to bottom, white 55%, transparent);
+          -webkit-mask-image: linear-gradient(to bottom, white 55%, transparent);
+        }
+        .pearl-btn .wrap::before,
+        .pearl-btn .wrap::after {
+          content: "";
+          position: absolute;
+          transition: all 0.3s ease;
+        }
+        .pearl-btn .wrap::before {
+          left: -15%; right: -15%; bottom: 25%; top: -100%; border-radius: 50%; background-color: rgba(255, 255, 255, 0.12);
+        }
+        .pearl-btn .wrap::after {
+          left: 6%; right: 6%; top: 12%; bottom: 40%; border-radius: 22px 22px 0 0; box-shadow: inset 0 10px 8px -10px rgba(255, 255, 255, 0.8); background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+        }
+        .pearl-btn:hover {
+          box-shadow: inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.4), inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7), inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.7), 0 2rem 2rem rgba(0, 0, 0, 0.3), 0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+        }
+        .pearl-btn:hover .wrap::before { transform: translateY(-5%); }
+        .pearl-btn:hover .wrap::after { opacity: 0.4; transform: translateY(5%); }
+        .pearl-btn:hover .wrap p { transform: translateY(-4%); }
+        .pearl-btn:active {
+          transform: translateY(4px); box-shadow: inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.5), inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.8), inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.4), 0 2rem 2rem rgba(0, 0, 0, 0.3), 0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+        }
+
+        /* Hide scrollbar for filter container */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden !important; max-width: 100vw !important; position: relative;" class="bg-[#fafafa] text-gray-900 dark:bg-brand-dark dark:text-gray-100 antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden">
+
+    <audio id="intro-audio" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" type="audio/mpeg">
+    </audio>
+
+    <main style="overflow-x: hidden !important; overflow-x: clip !important; max-width: 100vw !important; width: 100%;" class="relative flex flex-col">
+
+        <div id="intro-overlay">
+            <div class="intro-text-wrap">
+                <h1 class="intro-text">
+                    <span>Visionary</span> <span class="text-brand-primary">Syntax.</span>
+                </h1>
+                <div id="loading-line" class="intro-loading-bar w-full max-w-[80%] md:max-w-md"></div>
+                <div class="intro-subtitle font-bold text-center px-4">
+                    Initializing Protocol <span id="loading-percent" class="text-white">0</span>%
+                </div>
+            </div>
+        </div>
+
+        <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-xl bg-white/80 dark:bg-brand-dark/90 border-b border-gray-200 dark:border-brand-border shadow-sm" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1500">
+            <div class="max-w-screen-xl mx-auto px-4 lg:px-8">
+                <div class="flex items-center justify-between h-16 md:h-20">
+                    
+                    <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                        <a href="index.html" class="font-heading font-black text-lg md:text-xl tracking-tight text-gray-900 dark:text-white uppercase truncate max-w-[150px] md:max-w-none">
+                            Visionary<span class="text-brand-primary">.</span>
+                        </a>
+                    </div>
+                    
+                    <div class="hidden xl:flex space-x-6">
+                        <a href="#" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Home</a>
+                        <a href="#archive" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Prompts</a>
+                        <a href="wallpapers.html" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Wallpapers</a>
+                        <a href="#blog" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Blog</a>
+                        <a href="#edunova" class="text-[13px] font-semibold text-brand-primary transition-colors">Edunova Study Hub</a>
+                        <a href="about.html" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">About</a>
+                        <a href="#contact" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Contact</a>
+                    </div>
+
+                    <div class="flex items-center space-x-3 md:space-x-5">
+                        <a href="https://instagram.com/y._siddartha_" target="_blank" class="hidden md:block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"><i class="fab fa-instagram text-[15px]"></i></a>
+                        <a href="#" class="hidden md:block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"><i class="fab fa-telegram-plane text-[15px]"></i></a>
+                        
+                        <button id="theme-toggle" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors outline-none p-2">
+                            <i id="theme-icon" class="fas fa-sun text-[15px]"></i>
+                        </button>
+                        
+                        <a href="#archive" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-bold text-white bg-brand-primary shadow-sm hover:bg-brand-primaryHover transition-all duration-300">
+                            Get Prompts
+                        </a>
+                        
+                        <button id="mobile-menu-btn" class="xl:hidden text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors outline-none p-2">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="mobile-menu" class="hidden flex-col gap-4 py-4 bg-white dark:bg-brand-dark xl:hidden border-t border-gray-200 dark:border-brand-border px-4">
+                    <a href="#" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Home</a>
+                    <a href="#archive" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Prompts</a>
+                    <a href="wallpapers.html" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Wallpapers</a>
+                    <a href="#blog" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Blog</a>
+                    <a href="#edunova" class="text-[13px] font-semibold text-brand-primary transition-colors">Edunova Study Hub</a>
+                    <a href="about.html" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">About</a>
+                    <a href="#contact" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="relative pt-24 pb-12 lg:pt-48 lg:pb-32 px-4 lg:px-0 w-full overflow-hidden">
+            <div class="max-w-screen-xl mx-auto relative">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
+                    <div class="w-full flex flex-col items-center text-center lg:items-start lg:text-left" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1700">
+                        <div class="inline-flex items-center justify-center gap-2 px-3 py-1.5 mb-6 rounded bg-gray-100 dark:bg-brand-surface border border-gray-200 dark:border-brand-border text-brand-primary text-[9px] md:text-[10px] font-bold tracking-widest uppercase shadow-sm">
+                            AI PROMPT ARCHIVE
+                        </div>
+                        <h1 class="font-heading text-4xl sm:text-5xl lg:text-[4.5rem] font-extrabold tracking-tight leading-[1.1] mb-4 md:mb-6 text-gray-900 dark:text-white w-full break-words px-2">
+                            Professional AI <br>
+                            Prompts for <br>
+                            <span class="text-brand-primary">
+                                Modern Creators.
+                            </span>
+                        </h1>
+                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-8 md:mb-10 max-w-lg leading-relaxed font-light w-full break-words px-2 md:px-0">
+                            A structural library of handcrafted blueprints designed to bridge the gap between creative vision and high-fidelity AI execution. Optimized for social media growth and professional branding.
+                        </p>
+                        
+                        <div class="w-full flex justify-center lg:justify-start px-4 sm:px-0">
+                            <a href="#archive" class="pearl-btn">
+                                <div class="wrap">
+                                    <p>
+                                        <span>✧</span>
+                                        <span>✦</span>
+                                        Explore the Library
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full aspect-[4/5] sm:aspect-[4/3] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-premium dark:shadow-premium-dark mt-4 lg:mt-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1900">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" alt="High Fidelity Portrait" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="archive" class="py-16 md:py-24 bg-white dark:bg-brand-surface relative border-y border-gray-200 dark:border-brand-border px-4 lg:px-0 w-full overflow-hidden">
+            
+            <div class="max-w-screen-xl mx-auto mb-8 md:mb-12 w-full" data-aos="fade-up">
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="font-heading text-3xl md:text-4xl font-extrabold mb-3 md:mb-4 text-gray-900 dark:text-white tracking-tight uppercase break-words px-2">FEATURED ASSETS</h2>
+                    <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-light px-4">A preview of high-fidelity blueprints available in our technical archive.</p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row justify-between items-center gap-3 md:gap-4 bg-gray-50 dark:bg-brand-dark backdrop-blur-xl p-2 md:p-3 rounded-xl md:rounded-2xl border border-gray-200 dark:border-brand-border shadow-xl sticky top-16 md:top-24 z-40 w-full">
+                    <div class="flex flex-row gap-2 w-full lg:w-auto overflow-x-auto pb-1 hide-scroll snap-x">
+                        <button class="px-4 py-2 md:py-2.5 bg-brand-primary text-white rounded-lg text-[10px] md:text-xs font-bold tracking-wider shadow-glow flex-shrink-0 snap-start">ALL</button>
+                        <button class="px-4 py-2 md:py-2.5 bg-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-brand-surface rounded-lg text-[10px] md:text-xs font-bold tracking-wider transition-colors flex-shrink-0 snap-start border border-transparent">UNIQUE</button>
+                        <button class="px-4 py-2 md:py-2.5 bg-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-brand-surface rounded-lg text-[10px] md:text-xs font-bold tracking-wider transition-colors flex-shrink-0 snap-start border border-transparent">MEN</button>
+                        <button class="px-4 py-2 md:py-2.5 bg-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-brand-surface rounded-lg text-[10px] md:text-xs font-bold tracking-wider transition-colors flex-shrink-0 snap-start border border-transparent">WOMEN</button>
+                        <button class="px-4 py-2 md:py-2.5 bg-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-brand-surface rounded-lg text-[10px] md:text-xs font-bold tracking-wider transition-colors flex-shrink-0 snap-start border border-transparent">EDITORIAL</button>
+                    </div>
+                    
+                    <div class="w-full lg:w-72 relative flex-shrink-0 mt-1 md:mt-0">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs md:text-sm"></i>
+                        <input type="text" placeholder="Filter aesthetic..." class="w-full bg-white dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-lg py-2.5 pl-9 pr-3 text-xs md:text-sm text-gray-900 dark:text-white focus:outline-none focus:border-brand-primary transition-shadow">
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-screen-xl mx-auto w-full">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
+                    
+                    <div class="bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300 w-full" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-2 left-2 md:top-4 md:left-4 z-10 flex gap-1.5">
+                                <span class="px-2 py-0.5 bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white text-[8px] md:text-[10px] font-bold uppercase rounded-full">MEN</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop" alt="Portrait" class="w-full h-full object-cover opacity-90">
+                        </div>
+                        <div class="p-3 md:p-5 flex flex-col flex-grow w-full">
+                            <h4 class="text-gray-900 dark:text-white font-bold text-xs md:text-base mb-1 truncate w-full">Office Swag</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs mb-3 line-clamp-2 font-light w-full break-words">A high-fidelity candid flash photography blueprint.</p>
+                            <button class="open-modal-btn flex items-center justify-between w-full mt-auto text-[9px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors group/btn" 
+                                data-title="Office Swag Portrait"
+                                data-category="MEN"
+                                data-desc="A high-fidelity candid flash photography blueprint for professional office-style setups."
+                                data-img="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop"
+                                data-prompt="A high-fidelity candid flash photography shot of a young professional man in stylish streetwear sitting at an office desk, looking confident. 8k, photorealistic, cinematic lighting.">
+                                <span class="tracking-widest uppercase truncate">ACCESS</span>
+                                <i class="fas fa-arrow-right ml-1 text-brand-primary text-[8px] md:text-[10px] flex-shrink-0"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300 w-full" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-2 left-2 md:top-4 md:left-4 z-10 flex gap-1.5">
+                                <span class="px-2 py-0.5 bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white text-[8px] md:text-[10px] font-bold uppercase rounded-full">MEN</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600&auto=format&fit=crop" alt="Guitar" class="w-full h-full object-cover opacity-90">
+                        </div>
+                        <div class="p-3 md:p-5 flex flex-col flex-grow w-full">
+                            <h4 class="text-gray-900 dark:text-white font-bold text-xs md:text-base mb-1 truncate w-full">Night Guitarist</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs mb-3 line-clamp-2 font-light w-full break-words">A candid, ultra-realistic night shot of a young man.</p>
+                            <button class="open-modal-btn flex items-center justify-between w-full mt-auto text-[9px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors group/btn" 
+                                data-title="Night Guitarist"
+                                data-category="MEN"
+                                data-desc="A candid, ultra-realistic night shot of a young man playing an acoustic guitar while leaning against a sports car."
+                                data-img="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop"
+                                data-prompt="A candid, ultra-realistic night shot of a young man with a yellow shirt leaning against a grey sports car playing an acoustic guitar under streetlights. High contrast, neon accents.">
+                                <span class="tracking-widest uppercase truncate">ACCESS</span>
+                                <i class="fas fa-arrow-right ml-1 text-brand-primary text-[8px] md:text-[10px] flex-shrink-0"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300 w-full" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-2 left-2 md:top-4 md:left-4 z-10 flex gap-1.5">
+                                <span class="px-2 py-0.5 bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white text-[8px] md:text-[10px] font-bold uppercase rounded-full">UNIQUE</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" alt="Dark" class="w-full h-full object-cover opacity-90">
+                        </div>
+                        <div class="p-3 md:p-5 flex flex-col flex-grow w-full">
+                            <h4 class="text-gray-900 dark:text-white font-bold text-xs md:text-base mb-1 truncate w-full">Dark Rider</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs mb-3 line-clamp-2 font-light w-full break-words">An ultra-realistic cinematic dark poster portrait.</p>
+                            <button class="open-modal-btn flex items-center justify-between w-full mt-auto text-[9px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors group/btn" 
+                                data-title="Cinematic Dark Rider"
+                                data-category="UNIQUE"
+                                data-desc="An ultra-realistic cinematic dark poster portrait with deep shadows and rim lighting."
+                                data-img="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop"
+                                data-prompt="An ultra-realistic cinematic dark poster portrait of a person in shadows, strong rim lighting, moody atmosphere, 35mm lens, dramatic mood.">
+                                <span class="tracking-widest uppercase truncate">ACCESS</span>
+                                <i class="fas fa-arrow-right ml-1 text-brand-primary text-[8px] md:text-[10px] flex-shrink-0"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300 w-full" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-2 left-2 md:top-4 md:left-4 z-10 flex gap-1.5">
+                                <span class="px-2 py-0.5 bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white text-[8px] md:text-[10px] font-bold uppercase rounded-full">EDITORIAL</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=600&auto=format&fit=crop" alt="Jashu Editorial Poster" class="w-full h-full object-cover opacity-90">
+                        </div>
+                        <div class="p-3 md:p-5 flex flex-col flex-grow w-full">
+                            <h4 class="text-gray-900 dark:text-white font-bold text-xs md:text-base mb-1 truncate w-full">Red Halftone</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs mb-3 line-clamp-2 font-light w-full break-words">A modern graphic design poster with selective color.</p>
+                            <button class="open-modal-btn flex items-center justify-between w-full mt-auto text-[9px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors group/btn" 
+                                data-title="Red Halftone Editorial"
+                                data-category="EDITORIAL"
+                                data-desc="A modern graphic design poster featuring a selective color effect overlaid onto a vibrant, deep red background with vintage halftone textures."
+                                data-img="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1200&auto=format&fit=crop"
+                                data-prompt="Portrait of a young Indian man with a sharp, confident jawline and dark black textured swept-back hair. Natural color rendering, professional key and fill lighting. He is wearing a light-colored, fitted slim-cut kurta pajama. Strong contrapposto stance, dramatic Dutch tilt camera angle, looking off-camera. He is overlaid onto a vibrant, deep red background featuring a subtle vintage halftone dot texture. Large, bold, beige sans-serif typography reading 'JASHU' runs sideways across the red background, partially tucked behind the subject. Editorial magazine cover style, edgy and bold composition, selective color effect, 8k resolution, ultra-detailed, 9:16 aspect ratio.">
+                                <span class="tracking-widest uppercase truncate">ACCESS</span>
+                                <i class="fas fa-arrow-right ml-1 text-brand-primary text-[8px] md:text-[10px] flex-shrink-0"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300 w-full" data-aos="fade-up" data-aos-delay="500">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-2 left-2 md:top-4 md:left-4 z-10 flex gap-1.5">
+                                <span class="px-2 py-0.5 bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white text-[8px] md:text-[10px] font-bold uppercase rounded-full">MEN</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=600&auto=format&fit=crop" alt="Executive Sunset" class="w-full h-full object-cover opacity-90">
+                        </div>
+                        <div class="p-3 md:p-5 flex flex-col flex-grow w-full">
+                            <h4 class="text-gray-900 dark:text-white font-bold text-xs md:text-base mb-1 truncate w-full">Executive Sunset</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs mb-3 line-clamp-2 font-light w-full break-words">A confident executive leaning against a luxury car.</p>
+                            <button class="open-modal-btn flex items-center justify-between w-full mt-auto text-[9px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors group/btn" 
+                                data-title="Executive Sunset"
+                                data-category="MEN"
+                                data-desc="An ultra-detailed cinematic shot of a mature, elegant man in a tailored suit leaning against a black luxury car during a golden hour sunset."
+                                data-img="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=1200&auto=format&fit=crop"
+                                data-prompt="A mature, elegant man in a sharp tailored suit leaning against a black luxury car. Sunset golden hour lighting, mountain backdrop. Confident expression. --focus: man_and_car --mood: confident_elegant --quality: ultra_detail --composition: leaning_on_car. Negative prompt: blurry, cartoonish, casual clothes, distorted car, poor reflections, unnatural skin tones, exaggerated lighting.">
+                                <span class="tracking-widest uppercase truncate">ACCESS</span>
+                                <i class="fas fa-arrow-right ml-1 text-brand-primary text-[8px] md:text-[10px] flex-shrink-0"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 relative bg-white dark:bg-brand-dark px-4 lg:px-0 w-full overflow-hidden">
+            <div class="max-w-screen-xl mx-auto w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center w-full">
+                    <div data-aos="fade-up" data-aos-duration="1000" class="text-center md:text-left w-full">
+                        <h2 class="font-heading text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 md:mb-6 text-gray-900 dark:text-white uppercase leading-[1.1] break-words">
+                            EMPOWERING YOUR <br class="hidden sm:block">
+                            <span class="text-brand-primary">CREATIVE WORKFLOW</span>
+                        </h2>
+                        <p class="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-6 md:mb-8 leading-relaxed font-light break-words">
+                            Visionary Syntax provides the structural foundation for high-end digital asset creation. In an era where Generative AI is rapidly evolving, the difference between amateur and professional output lies in the engineering of the prompt. We spend thousands of hours testing and refining blueprints that understand lighting physics, lens parameters, and artistic composition.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-[1.5rem] md:rounded-[2rem] p-6 sm:p-10 lg:p-12 shadow-xl w-full" data-aos="fade-up" data-aos-duration="1000">
+                        <h3 class="font-heading text-lg md:text-xl font-bold mb-6 md:mb-10 text-gray-900 dark:text-white uppercase tracking-tight text-center md:text-left break-words">PROFESSIONAL USE-CASES</h3>
+                        
+                        <ul class="space-y-5 md:space-y-8 w-full">
+                            <li class="flex items-start gap-3 md:gap-4 w-full">
+                                <i class="far fa-check-circle text-brand-primary text-lg md:text-xl mt-0.5 flex-shrink-0"></i>
+                                <div class="w-full">
+                                    <h4 class="font-bold text-sm md:text-base mb-0.5 text-gray-900 dark:text-white leading-tight break-words">Instagram Reels & Posts</h4>
+                                    <p class="text-[11px] md:text-xs text-gray-500 dark:text-gray-400 font-light break-words">Engineered 9:16 vertical blueprints for viral impact.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 md:gap-4 w-full">
+                                <i class="far fa-check-circle text-brand-primary text-lg md:text-xl mt-0.5 flex-shrink-0"></i>
+                                <div class="w-full">
+                                    <h4 class="font-bold text-sm md:text-base mb-0.5 text-gray-900 dark:text-white leading-tight break-words">Profile Branding</h4>
+                                    <p class="text-[11px] md:text-xs text-gray-500 dark:text-gray-400 font-light break-words">Create high-fidelity personal avatars and headshots.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 md:gap-4 w-full">
+                                <i class="far fa-check-circle text-brand-primary text-lg md:text-xl mt-0.5 flex-shrink-0"></i>
+                                <div class="w-full">
+                                    <h4 class="font-bold text-sm md:text-base mb-0.5 text-gray-900 dark:text-white leading-tight break-words">YouTube Thumbnails</h4>
+                                    <p class="text-[11px] md:text-xs text-gray-500 dark:text-gray-400 font-light break-words">High-contrast visuals designed for click-through rate.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="edunova" class="scroll-mt-24 pb-16 md:pb-24 bg-white dark:bg-brand-dark px-4 lg:px-0" data-aos="fade-up" data-aos-duration="1000">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="bg-gray-900 dark:bg-brand-surface rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden flex flex-col lg:flex-row shadow-2xl border border-gray-800 dark:border-brand-border w-full">
+                    
+                    <div class="p-6 sm:p-10 lg:p-16 lg:w-[65%] flex flex-col items-center md:items-start text-center md:text-left w-full">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 mb-4 md:mb-6 rounded-full border border-brand-primary/30 text-brand-primary text-[9px] md:text-[10px] font-bold tracking-widest uppercase break-words">
+                            <i class="fas fa-globe flex-shrink-0"></i> PREMIUM WEBSITE
+                        </div>
+                        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3 md:mb-4 break-words w-full">
+                            EDUNOVA<span class="text-brand-primary font-light italic">STUDY HUB</span>
+                        </h2>
+                        <p class="text-gray-400 text-xs md:text-sm max-w-xl mb-8 md:mb-12 font-light leading-relaxed break-words w-full">
+                            Your ultimate learning hub for pomodoro focus, interactive MCQs, and detailed progress tracking. <strong class="text-white font-semibold">digital experiences</strong> that convert visitors into loyal customers.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-4 sm:gap-x-8 mb-8 md:mb-12 w-full text-left pl-4 md:pl-0">
+                            <div class="flex items-center gap-3 text-gray-300 text-xs md:text-sm font-light w-full">
+                                <i class="far fa-check-circle text-brand-primary flex-shrink-0"></i> Smart Notes
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300 text-xs md:text-sm font-light w-full">
+                                <i class="far fa-check-circle text-brand-primary flex-shrink-0"></i> Previous Papers
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300 text-xs md:text-sm font-light w-full">
+                                <i class="far fa-check-circle text-brand-primary flex-shrink-0"></i> Syllabus & Blueprints
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300 text-xs md:text-sm font-light w-full">
+                                <i class="far fa-check-circle text-brand-primary flex-shrink-0"></i> Official Textbooks
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300 text-xs md:text-sm font-light w-full">
+                                <i class="far fa-check-circle text-brand-primary flex-shrink-0"></i> MCQ Mock Tests
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300 text-xs md:text-sm font-light w-full">
+                                <i class="far fa-check-circle text-brand-primary flex-shrink-0"></i> My Report Card
+                            </div>
+                        </div>
+
+                        <a href="https://yennamsidartharushi.github.io/Smartstudy/" class="w-full sm:w-auto max-w-full inline-flex justify-center items-center px-6 md:px-8 py-3 md:py-3.5 text-xs md:text-sm font-bold text-gray-900 bg-white rounded-xl hover:bg-gray-200 transition-colors group">
+                            Start Your Project <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <div class="bg-black dark:bg-brand-card border-t lg:border-t-0 lg:border-l border-gray-800 dark:border-brand-border lg:w-[35%] p-8 md:p-10 flex flex-col items-center justify-center relative overflow-hidden w-full">
+                        <div class="relative z-10 text-center w-full">
+                            <div class="w-16 h-16 md:w-24 md:h-24 mx-auto bg-brand-primary rounded-[1rem] md:rounded-[1.5rem] flex items-center justify-center mb-4 md:mb-6 transform rotate-3 shadow-glow">
+                                <i class="fas fa-magic text-2xl md:text-4xl text-white"></i>
+                            </div>
+                            <h3 class="font-heading text-4xl md:text-5xl font-black text-white mb-1 md:mb-2 tracking-tight break-words">100+</h3>
+                            <p class="text-[9px] md:text-[10px] tracking-widest uppercase text-brand-primary font-bold break-words">PROJECTS DELIVERED</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="scroll-mt-24 py-16 md:py-24 bg-gray-50 dark:bg-[#050505] relative border-t border-gray-200 dark:border-brand-border px-4 lg:px-0 w-full overflow-hidden">
+            <div class="max-w-screen-xl mx-auto w-full" data-aos="fade-up">
+                <div class="text-center mb-10 md:mb-16">
+                    <h2 class="font-heading text-3xl md:text-4xl font-extrabold mb-3 md:mb-4 text-gray-900 dark:text-white tracking-tight uppercase break-words">Creator Articles</h2>
+                    <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-light px-4">Advanced prompt engineering, technical syntax guides, and algorithmic strategies.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                    <div class="bg-white dark:bg-brand-card rounded-2xl p-6 md:p-8 border border-gray-200 dark:border-brand-border flex flex-col w-full hover:-translate-y-1 transition-transform duration-300 shadow-sm">
+                        <span class="text-[10px] font-bold text-brand-primary tracking-widest uppercase mb-3">Engineering</span>
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">The Architecture of Brand Identity in AI</h3>
+                        <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-light mb-6 flex-grow leading-relaxed">
+                            Explore advanced linguistic structuring to ensure brand consistency across generative models. Learn how to dictate lighting, focal length, and color grading to outmaneuver competitors.
+                        </p>
+                        <a href="#" class="text-[11px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors flex items-center uppercase tracking-widest">
+                            Read Masterclass <i class="fas fa-arrow-right ml-2 text-brand-primary"></i>
+                        </a>
+                    </div>
+
+                    <div class="bg-white dark:bg-brand-card rounded-2xl p-6 md:p-8 border border-gray-200 dark:border-brand-border flex flex-col w-full hover:-translate-y-1 transition-transform duration-300 shadow-sm">
+                        <span class="text-[10px] font-bold text-brand-primary tracking-widest uppercase mb-3">Algorithms</span>
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">Mastering 9:16 Aspect Ratios for Virality</h3>
+                        <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-light mb-6 flex-grow leading-relaxed">
+                            Unlock the technical syntax behind high-retention Instagram Reels covers. We break down the exact camera angles and aesthetic keywords that trigger algorithmic prioritization.
+                        </p>
+                        <a href="#" class="text-[11px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors flex items-center uppercase tracking-widest">
+                            Read Masterclass <i class="fas fa-arrow-right ml-2 text-brand-primary"></i>
+                        </a>
+                    </div>
+
+                    <div class="bg-white dark:bg-brand-card rounded-2xl p-6 md:p-8 border border-gray-200 dark:border-brand-border flex flex-col w-full hover:-translate-y-1 transition-transform duration-300 shadow-sm md:col-span-2 lg:col-span-1">
+                        <span class="text-[10px] font-bold text-brand-primary tracking-widest uppercase mb-3">Syntax</span>
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">Bridging the Semantic Gap in Generation</h3>
+                        <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-light mb-6 flex-grow leading-relaxed">
+                            A comprehensive technical deep-dive into resolving AI hallucinations. Discover how negative prompting and parameter weighting can force machines to perfectly render your creative vision.
+                        </p>
+                        <a href="#" class="text-[11px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors flex items-center uppercase tracking-widest">
+                            Read Masterclass <i class="fas fa-arrow-right ml-2 text-brand-primary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="scroll-mt-24 py-16 md:py-20 bg-gray-50 dark:bg-brand-dark relative border-t border-gray-200 dark:border-brand-border px-4 lg:px-0 w-full overflow-hidden">
+            <div class="max-w-screen-xl mx-auto w-full" data-aos="fade-up">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start w-full">
+                    
+                    <div class="lg:col-span-4 flex flex-col gap-6 w-full">
+                        <div class="bg-white dark:bg-brand-surface rounded-[1.5rem] md:rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-brand-border shadow-sm w-full">
+                            <h3 class="font-heading text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-6 md:mb-8 tracking-tight break-words">Professional Hub</h3>
+                            
+                            <div class="space-y-5 md:space-y-6 w-full">
+                                <div class="flex items-center gap-3 md:gap-4 w-full">
+                                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gray-100 dark:bg-brand-card border border-gray-200 dark:border-brand-border flex items-center justify-center flex-shrink-0">
+                                        <i class="far fa-envelope text-gray-500 dark:text-gray-400 text-sm md:text-base"></i>
+                                    </div>
+                                    <div class="min-w-0 flex-1">
+                                        <p class="text-[8px] md:text-[9px] uppercase tracking-widest font-bold text-gray-500 mb-0.5 md:mb-1">DIRECT EMAIL</p>
+                                        <p class="text-xs md:text-sm font-medium text-gray-900 dark:text-white truncate break-words">yennamsiddartharushi7@gmail.com</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-3 md:gap-4 w-full">
+                                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gray-100 dark:bg-brand-card border border-gray-200 dark:border-brand-border flex items-center justify-center flex-shrink-0">
+                                        <i class="far fa-clock text-gray-500 dark:text-gray-400 text-sm md:text-base"></i>
+                                    </div>
+                                    <div class="min-w-0 flex-1">
+                                        <p class="text-[8px] md:text-[9px] uppercase tracking-widest font-bold text-gray-500 mb-0.5 md:mb-1">RESPONSE TIME</p>
+                                        <p class="text-xs md:text-sm font-medium text-gray-900 dark:text-white truncate break-words">Within 24-48 Hours</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-brand-surface rounded-[1.5rem] md:rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-brand-border shadow-sm relative overflow-hidden w-full">
+                            <div class="flex items-center gap-2 text-brand-primary mb-2 md:mb-3">
+                                <i class="fas fa-shield-alt text-sm md:text-base flex-shrink-0"></i>
+                                <h4 class="font-bold text-xs md:text-sm tracking-wide text-gray-900 dark:text-white break-words">Security Notice</h4>
+                            </div>
+                            <p class="text-[11px] md:text-xs text-gray-500 dark:text-gray-400 font-light leading-relaxed break-words">
+                                Any information submitted through this portal is handled according to our strict privacy guidelines and is never shared with third-party marketing entities. We value your digital security.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-8 bg-white dark:bg-brand-surface rounded-[1.5rem] md:rounded-[2.5rem] p-6 sm:p-8 md:p-12 border border-gray-200 dark:border-brand-border shadow-sm w-full">
+                        <form class="flex flex-col gap-4 md:gap-6 w-full">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 w-full">
+                                <div class="flex flex-col gap-1.5 md:gap-2 w-full">
+                                    <label class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-500">FIRST NAME</label>
+                                    <input type="text" placeholder="Mohan" class="w-full bg-gray-50 border border-gray-200 dark:bg-brand-card dark:border-transparent rounded-lg md:rounded-xl py-3 md:py-3.5 px-3 md:px-4 text-xs md:text-sm text-gray-900 dark:text-white focus:outline-none focus:border-brand-primary transition-colors">
+                                </div>
+                                <div class="flex flex-col gap-1.5 md:gap-2 w-full">
+                                    <label class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-500">LAST NAME</label>
+                                    <input type="text" placeholder="Creator" class="w-full bg-gray-50 border border-gray-200 dark:bg-brand-card dark:border-transparent rounded-lg md:rounded-xl py-3 md:py-3.5 px-3 md:px-4 text-xs md:text-sm text-gray-900 dark:text-white focus:outline-none focus:border-brand-primary transition-colors">
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1.5 md:gap-2 w-full">
+                                <label class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-500">EMAIL ADDRESS</label>
+                                <input type="email" placeholder="yennamsiddartharushi7@gmail.com" class="w-full bg-gray-50 border border-gray-200 dark:bg-brand-card dark:border-transparent rounded-lg md:rounded-xl py-3 md:py-3.5 px-3 md:px-4 text-xs md:text-sm text-gray-900 dark:text-white focus:outline-none focus:border-brand-primary transition-colors">
+                            </div>
+                            <div class="flex flex-col gap-1.5 md:gap-2 w-full">
+                                <label class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-500">INQUIRY NATURE</label>
+                                <input type="text" placeholder="Technical Support" class="w-full bg-gray-50 border border-gray-200 dark:bg-brand-card dark:border-transparent rounded-lg md:rounded-xl py-3 md:py-3.5 px-3 md:px-4 text-xs md:text-sm text-gray-900 dark:text-white focus:outline-none focus:border-brand-primary transition-colors">
+                            </div>
+                            <div class="flex flex-col gap-1.5 md:gap-2 w-full">
+                                <label class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-500">MESSAGE CONTENT</label>
+                                <textarea rows="4" placeholder="Please describe your creative goals or technical issue in detail..." class="w-full bg-gray-50 border border-gray-200 dark:bg-brand-card dark:border-transparent rounded-lg md:rounded-xl py-3 md:py-3.5 px-3 md:px-4 text-xs md:text-sm text-gray-900 dark:text-white focus:outline-none focus:border-brand-primary transition-colors resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3.5 md:py-4 mt-2 bg-brand-primary hover:bg-brand-primaryHover text-white rounded-lg md:rounded-xl font-bold text-xs md:text-sm tracking-wide transition-colors shadow-glow">
+                                Transmit Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="bg-brand-primary text-white py-14 px-4 lg:px-0" data-aos="fade-up" data-aos-duration="800">
+            <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 w-full">
+                <div class="w-full md:w-auto text-center md:text-left">
+                    <h2 class="font-heading text-3xl md:text-4xl font-extrabold uppercase mb-2 tracking-tight break-words">NEED SUPPORT?</h2>
+                    <a href="mailto:yennamsiddartharushi7@gmail.com" class="flex flex-wrap items-center justify-center md:justify-start gap-2 text-white/90 hover:text-white transition-colors font-light text-sm break-all w-full">
+                        <i class="far fa-envelope flex-shrink-0"></i> yennamsiddartharushi7@gmail.com
+                    </a>
+                </div>
+                <a href="#contact" class="w-full sm:w-auto max-w-full px-8 py-4 bg-white text-gray-900 font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all uppercase text-xs tracking-widest text-center whitespace-nowrap">
+                    SUPPORT PORTAL
+                </a>
+            </div>
+        </div>
+
+        <footer class="bg-white dark:bg-brand-surface pt-12 md:pt-16 pb-8 md:pb-10 border-t border-gray-200 dark:border-brand-border px-4 lg:px-0 w-full overflow-hidden">
+            <div class="max-w-screen-xl mx-auto w-full">
+                
+                <div class="text-center mb-16 md:mb-24 mt-4 md:mt-8 w-full" data-aos="fade-up">
+                    <p class="text-base md:text-xl font-light italic text-gray-500 dark:text-gray-400 max-w-3xl mx-auto px-4 break-words">
+                        "The future of content isn't just about what you show, it's about how accurately you can engineer the vision in your mind."
+                    </p>
+                    <div class="mt-4 md:mt-6 flex flex-wrap items-center justify-center gap-2 md:gap-4 text-[8px] md:text-[10px] tracking-[0.15em] md:tracking-[0.2em] uppercase text-gray-600 dark:text-gray-500 font-bold">
+                        <span>PROFESSIONAL</span> <span class="hidden sm:inline">&bull;</span> <span>STRUCTURAL</span> <span class="hidden sm:inline">&bull;</span> <span>VISUAL</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-12 md:mb-16 text-center sm:text-left w-full" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex flex-col items-center sm:items-start w-full overflow-hidden">
+                        <div class="flex items-center justify-center sm:justify-start gap-2 mb-4 md:mb-6 w-full">
+                            <span class="font-heading font-black text-lg md:text-xl tracking-tight text-gray-900 dark:text-white uppercase truncate break-words">
+                                Visionary <span class="text-brand-primary">Syntax.</span>
+                            </span>
+                        </div>
+                        <p class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 mb-4 leading-relaxed font-light break-words w-full px-4 sm:px-0">
+                            The premium destination for digital creators looking to elevate their professional presence with high-fidelity, engineered AI blueprints.
+                        </p>
+                        
+                        <div class="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-brand-card text-brand-primary text-[9px] md:text-[11px] font-semibold mb-6 border border-gray-200 dark:border-brand-border shadow-sm mx-auto sm:mx-0 w-fit max-w-full">
+                            <i class="fas fa-arrow-circle-down flex-shrink-0"></i> <span class="truncate break-words">Machine Learning & AI</span>
+                        </div>
+
+                        <div class="flex justify-center sm:justify-start gap-4 w-full mt-4">
+                            <a href="https://instagram.com/y._siddartha_" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-brand-card flex items-center justify-center text-gray-500 hover:text-brand-primary transition-all flex-shrink-0">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-brand-card flex items-center justify-center text-gray-500 hover:text-brand-primary transition-all flex-shrink-0">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                            <a href="mailto:yennamsiddartharushi7@gmail.com" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-brand-card flex items-center justify-center text-gray-500 hover:text-brand-primary transition-all flex-shrink-0">
+                                <i class="far fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center sm:items-start w-full">
+                        <h4 class="font-bold text-sm md:text-base mb-4 md:mb-6 text-gray-900 dark:text-white break-words">Explore</h4>
+                        <ul class="space-y-3 md:space-y-4 w-full">
+                            <li><a href="#" class="text-xs md:text-[13px] text-brand-primary font-medium hover:underline transition-all break-words">Home</a></li>
+                            <li><a href="#archive" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Prompt Archive</a></li>
+                            <li><a href="wallpapers.html" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Wallpapers</a></li>
+                            <li><a href="#blog" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Creator Articles</a></li>
+                            <li><a href="#contact" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col items-center sm:items-start w-full">
+                        <h4 class="font-bold text-sm md:text-base mb-4 md:mb-6 text-gray-900 dark:text-white break-words">Creative Guides</h4>
+                        <ul class="space-y-3 md:space-y-4 w-full">
+                            <li><a href="#" class="text-xs md:text-[13px] text-brand-primary font-medium hover:underline transition-all break-words">Writing Effective Prompts</a></li>
+                            <li><a href="#" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Instagram AI Strategies</a></li>
+                            <li><a href="#" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Engineering Basics</a></li>
+                            <li><a href="#" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Image Styles Guide</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col items-center sm:items-start w-full">
+                        <h4 class="font-bold text-sm md:text-base mb-4 md:mb-6 text-gray-900 dark:text-white break-words">Legal</h4>
+                        <ul class="space-y-3 md:space-y-4 w-full">
+                            <li><a href="privacy.html" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Privacy Policy</a></li>
+                            <li><a href="terms.html" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Terms & Conditions</a></li>
+                            <li><a href="#" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pt-6 md:pt-8 border-t border-gray-200 dark:border-brand-border flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4 text-center md:text-left w-full">
+                    <p class="text-[10px] md:text-xs text-gray-500 dark:text-gray-600 font-light break-words w-full md:w-auto">
+                        &copy; 2026 Visionary Syntax. All rights reserved.
+                    </p>
+                    <p class="text-[10px] md:text-xs text-gray-500 dark:text-gray-600 font-light break-words w-full md:w-auto">
+                        created by <span class="font-bold text-gray-900 dark:text-white">Yennam Siddartha Rushi (Sidhu)</span>.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </main> 
+
+    <div id="asset-modal" class="fixed inset-0 z-[100] bg-white/95 dark:bg-brand-dark/95 backdrop-blur-xl hidden w-full h-full overflow-y-auto transition-opacity">
+        <div class="max-w-screen-xl mx-auto px-4 lg:px-8 py-6 md:py-10 min-h-screen flex flex-col w-full">
+            
+            <button id="close-modal" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white flex items-center gap-2 text-[10px] md:text-xs font-semibold uppercase tracking-widest mb-6 md:mb-12 w-fit transition-colors">
+                <i class="fas fa-arrow-left flex-shrink-0"></i> Back to Archive
+            </button>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-24 items-start w-full">
+                <div class="flex flex-col order-2 lg:order-1 w-full max-w-full">
+                    <span id="modal-category" class="text-brand-primary text-[9px] md:text-[10px] font-bold uppercase tracking-widest mb-2 md:mb-4 break-words">Category</span>
+                    <h2 id="modal-title" class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4 leading-tight tracking-tight break-words w-full">Title</h2>
+                    <p id="modal-desc" class="text-gray-600 dark:text-gray-400 text-xs md:text-sm lg:text-base mb-6 md:mb-10 leading-relaxed font-light break-words w-full">Description goes here.</p>
+
+                    <button id="primary-unlock-btn" class="w-full md:w-fit max-w-full px-4 md:px-6 py-3 md:py-3.5 bg-brand-primary hover:bg-brand-primaryHover text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 md:gap-3 mb-8 md:mb-12 text-xs md:text-sm shadow-sm cursor-pointer">
+                        <i id="primary-icon" class="fas fa-unlock-alt flex-shrink-0"></i> <span id="primary-btn-text" class="break-words">Unlock Asset Prompt</span>
+                    </button>
+
+                    <div class="w-full">
+                        <div class="flex items-center gap-2 text-gray-900 dark:text-white text-[10px] md:text-xs font-bold tracking-widest uppercase mb-3 md:mb-4 break-words w-full">
+                            <i class="far fa-file-code flex-shrink-0"></i> Technical Blueprint
+                        </div>
+                        
+                        <div class="bg-gray-50 dark:bg-[#0F1423] border border-gray-200 dark:border-brand-border rounded-xl p-4 md:p-6 lg:p-10 flex flex-col items-center justify-center min-h-[180px] md:min-h-[220px] lg:min-h-[260px] w-full">
+                            
+                            <div id="prompt-state-initial" class="flex flex-col items-center gap-3 md:gap-4 w-full">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-[#151A2C] flex items-center justify-center border border-gray-200 dark:border-brand-border shadow-sm flex-shrink-0">
+                                    <i class="fas fa-lock text-gray-400 dark:text-gray-500 text-base md:text-lg"></i>
+                                </div>
+                                <button id="secondary-unlock-btn" class="w-full md:w-auto px-4 md:px-5 py-2.5 bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-brand-dark dark:hover:bg-gray-200 rounded-lg font-semibold transition-colors text-[11px] md:text-xs lg:text-sm shadow-sm break-words">
+                                    Initiate Unlock Sequence
+                                </button>
+                            </div>
+
+                            <div id="prompt-state-timer" class="hidden flex-col items-center gap-4 md:gap-5 w-full">
+                                <div class="relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex-shrink-0">
+                                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                        <circle cx="50" cy="50" r="45" fill="none" class="stroke-gray-200 dark:stroke-brand-border" stroke-width="4"></circle>
+                                        <circle id="timer-ring" cx="50" cy="50" r="45" fill="none" class="stroke-brand-primary timer-ring" stroke-width="4" stroke-dasharray="283" stroke-dashoffset="0"></circle>
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span id="countdown-number" class="text-gray-900 dark:text-white font-bold text-sm md:text-base lg:text-lg">15</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-500 dark:text-gray-400 text-[10px] md:text-xs lg:text-sm font-medium text-center break-words w-full">Decrypting... please wait <span id="countdown-text" class="text-gray-900 dark:text-white font-bold">15</span>s</p>
+                            </div>
+
+                            <div id="prompt-state-unlocked" class="hidden w-full flex-col w-full">
+                                <div id="capture-container" class="bg-white dark:bg-[#050505] p-4 md:p-5 rounded-lg border border-gray-200 dark:border-brand-border mb-3 md:mb-4 max-h-[150px] overflow-y-auto custom-scrollbar w-full">
+                                    <p id="actual-prompt-text" class="text-gray-800 dark:text-gray-300 text-[10px] md:text-xs lg:text-sm leading-relaxed font-mono select-all break-words w-full"></p>
+                                </div>
+                                
+                                <div class="w-full flex flex-col gap-2">
+                                    <button id="copy-unlocked-btn" class="w-full py-2.5 md:py-3 bg-brand-primary hover:bg-brand-primaryHover text-white rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 text-[10px] md:text-xs lg:text-sm shadow-sm">
+                                        <span id="copy-btn-text" class="break-words">Copy Text</span>
+                                        <i id="copy-btn-icon" class="far fa-copy flex-shrink-0"></i>
+                                    </button>
+                                    <div class="grid grid-cols-2 gap-2 w-full">
+                                        <button id="download-pdf-btn" class="w-full py-2.5 md:py-3 bg-gray-200 hover:bg-gray-300 dark:bg-[#151A2C] dark:hover:bg-[#1f253d] text-gray-900 dark:text-white rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 text-[10px] md:text-xs lg:text-sm shadow-sm">
+                                            <i class="far fa-file-pdf"></i> PDF
+                                        </button>
+                                        <button id="download-img-btn" class="w-full py-2.5 md:py-3 bg-gray-200 hover:bg-gray-300 dark:bg-[#151A2C] dark:hover:bg-[#1f253d] text-gray-900 dark:text-white rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 text-[10px] md:text-xs lg:text-sm shadow-sm">
+                                            <i class="far fa-image"></i> Image
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-gray-200 dark:border-brand-border shadow-premium dark:shadow-premium-dark relative aspect-[4/5] sm:aspect-auto sm:h-[45vh] md:h-[60vh] lg:h-[75vh] order-1 lg:order-2 bg-gray-100 dark:bg-brand-surface mt-4 lg:mt-0">
+                    <img id="modal-image" src="" alt="Asset Image" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('intro-overlay');
+            
+            if (sessionStorage.getItem('introPlayed') === 'true') {
+                loader.style.display = 'none';
+                document.body.classList.remove('overflow-hidden');
+                document.body.style.width = "100%";
+                AOS.init({ once: true, offset: 50 });
+                return; 
+            }
+
+            window.scrollTo(0, 0); 
+            const percentText = document.getElementById('loading-percent');
+            const loadingLine = document.getElementById('loading-line');
+            const introAudio = document.getElementById('intro-audio');
+            
+            if (introAudio) {
+                introAudio.volume = 0.4;
+                let playPromise = introAudio.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Audio autoplay blocked by browser policy.");
+                    });
+                }
+            }
+            
+            document.body.classList.add('overflow-hidden');
+            
+            let count = 0;
+            setTimeout(() => { loadingLine.style.width = "80%"; }, 100);
+
+            let counterInterval = setInterval(() => {
+                count += Math.floor(Math.random() * 5) + 2; 
+                if (count >= 100) {
+                    count = 100;
+                    clearInterval(counterInterval);
+                    
+                    setTimeout(() => {
+                        loader.classList.add('intro-slide-up');
+                        
+                        setTimeout(() => {
+                            document.body.classList.remove('overflow-hidden');
+                            loader.style.display = 'none';
+                            document.body.style.width = "100%"; 
+                            window.scrollTo(0, 0); 
+                            
+                            sessionStorage.setItem('introPlayed', 'true');
+                            
+                            AOS.init({ once: true, offset: 50 }); 
+                        }, 1200); 
+                    }, 400);
+                }
+                percentText.innerText = count;
+            }, 30); 
+        });
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        if (localStorage.getItem('theme') === 'light') {
+            htmlElement.classList.remove('dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            htmlElement.classList.add('dark');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            if (!localStorage.getItem('theme')) {
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+
+        const modal = document.getElementById('asset-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const body = document.body;
+        let countdownInterval;
+
+        const stateInitial = document.getElementById('prompt-state-initial');
+        const stateTimer = document.getElementById('prompt-state-timer');
+        const stateUnlocked = document.getElementById('prompt-state-unlocked');
+        
+        const primaryBtn = document.getElementById('primary-unlock-btn');
+        const primaryBtnText = document.getElementById('primary-btn-text');
+        const primaryIcon = document.getElementById('primary-icon');
+        const secondaryBtn = document.getElementById('secondary-unlock-btn');
+        
+        const ring = document.getElementById('timer-ring');
+        const numCenter = document.getElementById('countdown-number');
+        const numText = document.getElementById('countdown-text');
+        
+        const currentPromptData = { text: "", title: "" };
+
+        document.querySelectorAll('.open-modal-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.getElementById('modal-title').innerText = this.getAttribute('data-title');
+                document.getElementById('modal-category').innerText = this.getAttribute('data-category');
+                document.getElementById('modal-desc').innerText = this.getAttribute('data-desc');
+                document.getElementById('modal-image').src = this.getAttribute('data-img');
+                
+                currentPromptData.text = this.getAttribute('data-prompt');
+                currentPromptData.title = this.getAttribute('data-title').replace(/\s+/g, '-').toLowerCase();
+
+                resetModalUI();
+                modal.classList.remove('hidden');
+                body.style.overflow = 'hidden'; 
+            });
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            body.style.overflow = 'auto';
+            clearInterval(countdownInterval); 
+        });
+
+        function startUnlock() {
+            let duration = 15;
+            let timer = duration;
+
+            stateInitial.classList.add('hidden');
+            stateTimer.classList.remove('hidden');
+            stateTimer.classList.add('flex');
+
+            primaryBtn.classList.remove('bg-brand-primary', 'hover:bg-brand-primaryHover', 'text-white');
+            primaryBtn.classList.add('bg-gray-100', 'dark:bg-[#0F1423]', 'cursor-not-allowed', 'text-gray-400', 'border', 'border-gray-200', 'dark:border-brand-border');
+            primaryIcon.className = "fas fa-circle-notch fa-spin text-brand-primary"; 
+            primaryBtnText.innerText = `Decrypting (${timer}s)`;
+            
+            ring.style.strokeDashoffset = "0";
+            numCenter.innerText = timer;
+            numText.innerText = timer;
+
+            countdownInterval = setInterval(() => {
+                timer--;
+                primaryBtnText.innerText = `Decrypting (${timer}s)`;
+                numCenter.innerText = timer;
+                numText.innerText = timer;
+                
+                const offset = 283 - (283 * (timer / duration));
+                ring.style.strokeDashoffset = offset;
+
+                if (timer <= 0) {
+                    clearInterval(countdownInterval);
+                    showUnlockedPrompt();
+                }
+            }, 1000);
+        }
+
+        primaryBtn.addEventListener('click', () => {
+            if(!primaryBtn.classList.contains('cursor-not-allowed') && !primaryBtn.classList.contains('bg-[#10b981]')) {
+                startUnlock();
+            }
+        });
+        secondaryBtn.addEventListener('click', startUnlock);
+
+        function showUnlockedPrompt() {
+            stateTimer.classList.remove('flex');
+            stateTimer.classList.add('hidden');
+            
+            stateUnlocked.classList.remove('hidden');
+            stateUnlocked.classList.add('flex');
+            
+            document.getElementById('actual-prompt-text').innerText = currentPromptData.text;
+
+            primaryBtn.classList.remove('bg-gray-100', 'dark:bg-[#0F1423]', 'cursor-not-allowed', 'text-gray-400', 'border', 'border-gray-200', 'dark:border-brand-border');
+            primaryBtn.classList.add('bg-[#10b981]', 'text-white', 'cursor-default'); 
+            primaryIcon.className = "fas fa-check";
+            primaryBtnText.innerText = "Blueprint Unlocked";
+        }
+
+        function resetModalUI() {
+            clearInterval(countdownInterval);
+            
+            stateInitial.classList.remove('hidden');
+            stateInitial.classList.add('flex');
+            stateTimer.classList.remove('flex');
+            stateTimer.classList.add('hidden');
+            stateUnlocked.classList.remove('flex');
+            stateUnlocked.classList.add('hidden');
+
+            primaryBtn.className = "w-full md:w-fit max-w-full px-4 md:px-6 py-3 md:py-3.5 bg-brand-primary hover:bg-brand-primaryHover text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 md:gap-3 mb-8 md:mb-12 text-xs md:text-sm shadow-sm cursor-pointer";
+            primaryIcon.className = "fas fa-unlock-alt";
+            primaryBtnText.innerText = "Unlock Asset Prompt";
+            
+            ring.style.strokeDashoffset = "0";
+            
+            const copyText = document.getElementById('copy-btn-text');
+            const copyIcon = document.getElementById('copy-btn-icon');
+            copyText.innerText = "Copy Text";
+            copyIcon.className = "far fa-copy flex-shrink-0";
+        }
+
+        document.getElementById('copy-unlocked-btn').addEventListener('click', function() {
+            const copyText = document.getElementById('copy-btn-text');
+            const copyIcon = document.getElementById('copy-btn-icon');
+            
+            navigator.clipboard.writeText(currentPromptData.text).then(() => {
+                copyText.innerText = 'COPIED!';
+                copyIcon.className = 'fas fa-check flex-shrink-0';
+                
+                setTimeout(() => {
+                    copyText.innerText = 'Copy Text';
+                    copyIcon.className = 'far fa-copy flex-shrink-0';
+                }, 2000);
+            });
+        });
+
+        document.getElementById('download-img-btn').addEventListener('click', function() {
+            const captureArea = document.getElementById('capture-container');
+            const originalMaxHeight = captureArea.style.maxHeight;
+            captureArea.style.maxHeight = 'none'; 
+            captureArea.style.overflow = 'visible';
+
+            html2canvas(captureArea, {
+                backgroundColor: htmlElement.classList.contains('dark') ? '#050505' : '#ffffff',
+                scale: 2 
+            }).then(canvas => {
+                let link = document.createElement('a');
+                link.download = `visionary-syntax-${currentPromptData.title}.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                captureArea.style.maxHeight = originalMaxHeight;
+                captureArea.style.overflow = 'auto';
+            });
+        });
+
+        document.getElementById('download-pdf-btn').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
+            const captureArea = document.getElementById('capture-container');
+            const originalMaxHeight = captureArea.style.maxHeight;
+            
+            captureArea.style.maxHeight = 'none'; 
+            captureArea.style.overflow = 'visible';
+
+            html2canvas(captureArea, {
+                backgroundColor: htmlElement.classList.contains('dark') ? '#050505' : '#ffffff',
+                scale: 2
+            }).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const imgProps = doc.getImageProperties(imgData);
+                const pdfWidth = doc.internal.pageSize.getWidth() - 20; 
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                
+                doc.setFontSize(16);
+                doc.text(`Visionary Syntax: ${currentPromptData.title.replace(/-/g, ' ').toUpperCase()}`, 10, 15);
+                doc.addImage(imgData, 'PNG', 10, 25, pdfWidth, pdfHeight);
+                doc.save(`visionary-syntax-${currentPromptData.title}.pdf`);
+                
+                captureArea.style.maxHeight = originalMaxHeight;
+                captureArea.style.overflow = 'auto';
+            });
+        });
+    </script>
+</body>
+</html>
