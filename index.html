@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -236,6 +233,8 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+        
+        .nav-scroller { -webkit-overflow-scrolling: touch; }
     </style>
 </head>
 <body style="overflow-x: hidden !important; max-width: 100vw !important; position: relative;" class="bg-[#fafafa] text-gray-900 dark:bg-brand-dark dark:text-gray-100 antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden">
@@ -260,50 +259,35 @@
 
         <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-xl bg-white/80 dark:bg-brand-dark/90 border-b border-gray-200 dark:border-brand-border shadow-sm" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1500">
             <div class="max-w-screen-xl mx-auto px-4 lg:px-8">
-                <div class="flex items-center justify-between h-16 md:h-20">
+                <div class="flex items-center justify-start lg:justify-between h-16 md:h-20 overflow-x-auto hide-scroll nav-scroller gap-6 lg:gap-0 whitespace-nowrap w-full">
                     
                     <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                        <a href="index.html" class="font-heading font-black text-lg md:text-xl tracking-tight text-gray-900 dark:text-white uppercase truncate max-w-[150px] md:max-w-none">
+                        <a href="index.html" class="font-heading font-black text-lg md:text-xl tracking-tight text-gray-900 dark:text-white uppercase truncate">
                             Visionary<span class="text-brand-primary">.</span>
                         </a>
                     </div>
                     
-                    <div class="hidden xl:flex space-x-6">
+                    <div class="flex items-center space-x-5 md:space-x-6 flex-shrink-0">
                         <a href="#" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Home</a>
-                        <a href="#archive" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Prompts</a>
-                        <a href="wallpapers.html" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Wallpapers</a>
+                        <a href="#wallpapers" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Wallpapers</a>
                         <a href="#blog" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Blog</a>
                         <a href="#edunova" class="text-[13px] font-semibold text-brand-primary transition-colors">Edunova Study Hub</a>
                         <a href="about.html" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">About</a>
                         <a href="#contact" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Contact</a>
                     </div>
 
-                    <div class="flex items-center space-x-3 md:space-x-5">
+                    <div class="flex items-center space-x-4 flex-shrink-0 pr-4 lg:pr-0 ml-auto">
                         <a href="https://instagram.com/y._siddartha_" target="_blank" class="hidden md:block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"><i class="fab fa-instagram text-[15px]"></i></a>
                         <a href="#" class="hidden md:block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"><i class="fab fa-telegram-plane text-[15px]"></i></a>
                         
-                        <button id="theme-toggle" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors outline-none p-2">
+                        <button id="theme-toggle" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors outline-none p-2 flex-shrink-0">
                             <i id="theme-icon" class="fas fa-sun text-[15px]"></i>
                         </button>
                         
-                        <a href="#archive" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-bold text-white bg-brand-primary shadow-sm hover:bg-brand-primaryHover transition-all duration-300">
-                            Get Prompts
+                        <a href="#wallpapers" class="inline-flex items-center justify-center px-5 py-2 md:py-2.5 rounded-full text-xs font-bold text-white bg-brand-primary shadow-sm hover:bg-brand-primaryHover transition-all duration-300 flex-shrink-0">
+                            Get Wallpapers
                         </a>
-                        
-                        <button id="mobile-menu-btn" class="xl:hidden text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors outline-none p-2">
-                            <i class="fas fa-bars text-xl"></i>
-                        </button>
                     </div>
-                </div>
-                
-                <div id="mobile-menu" class="hidden flex-col gap-4 py-4 bg-white dark:bg-brand-dark xl:hidden border-t border-gray-200 dark:border-brand-border px-4">
-                    <a href="#" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Home</a>
-                    <a href="#archive" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Prompts</a>
-                    <a href="wallpapers.html" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Wallpapers</a>
-                    <a href="#blog" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Blog</a>
-                    <a href="#edunova" class="text-[13px] font-semibold text-brand-primary transition-colors">Edunova Study Hub</a>
-                    <a href="about.html" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">About</a>
-                    <a href="#contact" class="text-[13px] font-semibold text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-white transition-colors">Contact</a>
                 </div>
             </div>
         </nav>
@@ -313,26 +297,26 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
                     <div class="w-full flex flex-col items-center text-center lg:items-start lg:text-left" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1700">
                         <div class="inline-flex items-center justify-center gap-2 px-3 py-1.5 mb-6 rounded bg-gray-100 dark:bg-brand-surface border border-gray-200 dark:border-brand-border text-brand-primary text-[9px] md:text-[10px] font-bold tracking-widest uppercase shadow-sm">
-                            AI PROMPT ARCHIVE
+                            DIGITAL AESTHETICS
                         </div>
                         <h1 class="font-heading text-4xl sm:text-5xl lg:text-[4.5rem] font-extrabold tracking-tight leading-[1.1] mb-4 md:mb-6 text-gray-900 dark:text-white w-full break-words px-2">
-                            Professional AI <br>
-                            Prompts for <br>
+                            Premium 4K <br>
+                            Wallpapers for <br>
                             <span class="text-brand-primary">
-                                Modern Creators.
+                                Modern Screens.
                             </span>
                         </h1>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-8 md:mb-10 max-w-lg leading-relaxed font-light w-full break-words px-2 md:px-0">
-                            A structural library of handcrafted blueprints designed to bridge the gap between creative vision and high-fidelity AI execution. Optimized for social media growth and professional branding.
+                            A curated library of high-fidelity digital backgrounds designed to elevate your device aesthetics. Explore our exclusive collection of mobile and desktop wallpapers.
                         </p>
                         
                         <div class="w-full flex justify-center lg:justify-start px-4 sm:px-0">
-                            <a href="#archive" class="pearl-btn">
+                            <a href="#wallpapers" class="pearl-btn">
                                 <div class="wrap">
                                     <p>
                                         <span>✧</span>
                                         <span>✦</span>
-                                        Explore the Library
+                                        Explore the Gallery
                                     </p>
                                 </div>
                             </a>
@@ -340,148 +324,577 @@
                     </div>
 
                     <div class="relative w-full aspect-[4/5] sm:aspect-[4/3] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-premium dark:shadow-premium-dark mt-4 lg:mt-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1900">
-                        <img src="Gemini_Generated_Image_7j3zvh7j3zvh7j3z.png" alt="High Fidelity Portrait" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" alt="High Fidelity Background" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="archive" class="py-16 md:py-24 bg-white dark:bg-brand-surface relative border-y border-gray-200 dark:border-brand-border px-4 lg:px-0 w-full overflow-hidden">
+        <section id="wallpapers" class="scroll-mt-24 py-16 md:py-24 bg-white dark:bg-[#080808] relative border-y border-gray-200 dark:border-brand-border px-4 lg:px-0 w-full overflow-hidden">
             
             <div class="max-w-screen-xl mx-auto mb-8 md:mb-12 w-full" data-aos="fade-up">
                 <div class="text-center mb-8 md:mb-12">
-                    <h2 class="font-heading text-3xl md:text-4xl font-extrabold mb-3 md:mb-4 text-gray-900 dark:text-white tracking-tight uppercase break-words px-2">FEATURED ASSETS</h2>
-                    <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-light px-4">A preview of high-fidelity blueprints available in our technical archive.</p>
+                    <h2 class="font-heading text-3xl md:text-4xl font-extrabold mb-3 md:mb-4 text-gray-900 dark:text-white tracking-tight uppercase break-words px-2">4K Wallpapers</h2>
+                    <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-light px-4">Exclusive high-resolution backgrounds for your devices.</p>
                 </div>
                 
-                <div class="flex flex-col lg:flex-row justify-between items-center gap-3 md:gap-4 bg-gray-50 dark:bg-brand-dark backdrop-blur-xl p-2 md:p-3 rounded-xl md:rounded-2xl border border-gray-200 dark:border-brand-border shadow-xl sticky top-16 md:top-24 z-40 w-full">
-                    <div class="flex flex-row gap-2 w-full lg:w-auto overflow-x-auto pb-1 hide-scroll snap-x">
-                        <button class="px-4 py-2 md:py-2.5 bg-brand-primary text-white rounded-lg text-[10px] md:text-xs font-bold tracking-wider shadow-glow flex-shrink-0 snap-start">ALL</button>
-                        <button class="px-4 py-2 md:py-2.5 bg-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-brand-surface rounded-lg text-[10px] md:text-xs font-bold tracking-wider transition-colors flex-shrink-0 snap-start border border-transparent">UNIQUE</button>
-                        <button class="px-4 py-2 md:py-2.5 bg-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-brand-surface rounded-lg text-[10px] md:text-xs font-bold tracking-wider transition-colors flex-shrink-0 snap-start border border-transparent">MEN</button>
-                        <button class="px-4 py-2 md:py-2.5 bg-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-brand-surface rounded-lg text-[10px] md:text-xs font-bold tracking-wider transition-colors flex-shrink-0 snap-start border border-transparent">WOMEN</button>
-                        <button class="px-4 py-2 md:py-2.5 bg-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-brand-surface rounded-lg text-[10px] md:text-xs font-bold tracking-wider transition-colors flex-shrink-0 snap-start border border-transparent">EDITORIAL</button>
-                    </div>
-                    
-                    <div class="w-full lg:w-72 relative flex-shrink-0 mt-1 md:mt-0">
-                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs md:text-sm"></i>
-                        <input type="text" placeholder="Filter aesthetic..." class="w-full bg-white dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-lg py-2.5 pl-9 pr-3 text-xs md:text-sm text-gray-900 dark:text-white focus:outline-none focus:border-brand-primary transition-shadow">
+                <div class="flex justify-center mb-10 w-full">
+                    <div class="flex flex-row gap-2 w-full lg:w-auto overflow-x-auto pb-1 hide-scroll snap-x justify-start md:justify-center">
+                        <button class="filter-btn px-5 py-2.5 bg-brand-primary text-white rounded-xl text-[10px] md:text-xs font-bold tracking-wider shadow-glow flex-shrink-0 snap-start" data-filter="all">ALL</button>
+                        <button class="filter-btn px-5 py-2.5 bg-gray-100 dark:bg-brand-card text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-brand-border rounded-xl text-[10px] md:text-xs font-bold tracking-wider transition-colors flex-shrink-0 snap-start" data-filter="cars">CARS</button>
+                        <button class="filter-btn px-5 py-2.5 bg-gray-100 dark:bg-brand-card text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-brand-border rounded-xl text-[10px] md:text-xs font-bold tracking-wider transition-colors flex-shrink-0 snap-start" data-filter="minecraft">MINECRAFT</button>
+                        <button class="filter-btn px-5 py-2.5 bg-gray-100 dark:bg-brand-card text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-brand-border rounded-xl text-[10px] md:text-xs font-bold tracking-wider transition-colors flex-shrink-0 snap-start" data-filter="dark">DARK</button>
                     </div>
                 </div>
             </div>
 
             <div class="max-w-screen-xl mx-auto w-full">
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full" id="wallpaper-grid">
                     
-                    <div class="bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300 w-full" data-aos="fade-up" data-aos-delay="100">
-                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-black w-full">
-                            <div class="absolute top-2 left-2 md:top-4 md:left-4 z-10 flex gap-1.5">
-                                <span class="px-2 py-0.5 bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white text-[8px] md:text-[10px] font-bold uppercase rounded-full">MEN</span>
+                    <div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars dark" 
+                         data-highres="wall1.jpg " 
+                         data-filename="visionary-wallpaper-1.jpg" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
                             </div>
-                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop" alt="Portrait" class="w-full h-full object-cover opacity-90">
+                            <img src="wall1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
                         </div>
-                        <div class="p-3 md:p-5 flex flex-col flex-grow w-full">
-                            <h4 class="text-gray-900 dark:text-white font-bold text-xs md:text-base mb-1 truncate w-full">Office Swag</h4>
-                            <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs mb-3 line-clamp-2 font-light w-full break-words">A high-fidelity candid flash photography blueprint.</p>
-                            <button class="open-modal-btn flex items-center justify-between w-full mt-auto text-[9px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors group/btn" 
-                                data-title="Office Swag Portrait"
-                                data-category="MEN"
-                                data-desc="A high-fidelity candid flash photography blueprint for professional office-style setups."
-                                data-img="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop"
-                                data-prompt="A high-fidelity candid flash photography shot of a young professional man in stylish streetwear sitting at an office desk, looking confident. 8k, photorealistic, cinematic lighting.">
-                                <span class="tracking-widest uppercase truncate">ACCESS</span>
-                                <i class="fas fa-arrow-right ml-1 text-brand-primary text-[8px] md:text-[10px] flex-shrink-0"></i>
-                            </button>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Neon Geometry</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
                         </div>
                     </div>
 
-                    <div class="bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300 w-full" data-aos="fade-up" data-aos-delay="200">
-                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-black w-full">
-                            <div class="absolute top-2 left-2 md:top-4 md:left-4 z-10 flex gap-1.5">
-                                <span class="px-2 py-0.5 bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white text-[8px] md:text-[10px] font-bold uppercase rounded-full">MEN</span>
+                    <div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars" 
+                         data-highres="wall2.jpg" 
+                         data-filename="visionary-wallpaper-2.jpg" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
                             </div>
-                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600&auto=format&fit=crop" alt="Guitar" class="w-full h-full object-cover opacity-90">
+                            <img src="wall2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
                         </div>
-                        <div class="p-3 md:p-5 flex flex-col flex-grow w-full">
-                            <h4 class="text-gray-900 dark:text-white font-bold text-xs md:text-base mb-1 truncate w-full">Night Guitarist</h4>
-                            <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs mb-3 line-clamp-2 font-light w-full break-words">A candid, ultra-realistic night shot of a young man.</p>
-                            <button class="open-modal-btn flex items-center justify-between w-full mt-auto text-[9px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors group/btn" 
-                                data-title="Night Guitarist"
-                                data-category="MEN"
-                                data-desc="A candid, ultra-realistic night shot of a young man playing an acoustic guitar while leaning against a sports car."
-                                data-img="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop"
-                                data-prompt="A candid, ultra-realistic night shot of a young man with a yellow shirt leaning against a grey sports car playing an acoustic guitar under streetlights. High contrast, neon accents.">
-                                <span class="tracking-widest uppercase truncate">ACCESS</span>
-                                <i class="fas fa-arrow-right ml-1 text-brand-primary text-[8px] md:text-[10px] flex-shrink-0"></i>
-                            </button>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Liquid Abstract</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
                         </div>
                     </div>
 
-                    <div class="bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300 w-full" data-aos="fade-up" data-aos-delay="300">
-                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-black w-full">
-                            <div class="absolute top-2 left-2 md:top-4 md:left-4 z-10 flex gap-1.5">
-                                <span class="px-2 py-0.5 bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white text-[8px] md:text-[10px] font-bold uppercase rounded-full">UNIQUE</span>
+                    <div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft" 
+                         data-highres="wall3.jpg" 
+                         data-filename="visionary-wallpaper-3.jpg" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
                             </div>
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" alt="Dark" class="w-full h-full object-cover opacity-90">
+                            <img src="wall13.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
                         </div>
-                        <div class="p-3 md:p-5 flex flex-col flex-grow w-full">
-                            <h4 class="text-gray-900 dark:text-white font-bold text-xs md:text-base mb-1 truncate w-full">Dark Rider</h4>
-                            <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs mb-3 line-clamp-2 font-light w-full break-words">An ultra-realistic cinematic dark poster portrait.</p>
-                            <button class="open-modal-btn flex items-center justify-between w-full mt-auto text-[9px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors group/btn" 
-                                data-title="Cinematic Dark Rider"
-                                data-category="UNIQUE"
-                                data-desc="An ultra-realistic cinematic dark poster portrait with deep shadows and rim lighting."
-                                data-img="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop"
-                                data-prompt="An ultra-realistic cinematic dark poster portrait of a person in shadows, strong rim lighting, moody atmosphere, 35mm lens, dramatic mood.">
-                                <span class="tracking-widest uppercase truncate">ACCESS</span>
-                                <i class="fas fa-arrow-right ml-1 text-brand-primary text-[8px] md:text-[10px] flex-shrink-0"></i>
-                            </button>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Neon OLED</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
                         </div>
                     </div>
 
-                    <div class="bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300 w-full" data-aos="fade-up" data-aos-delay="400">
-                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-black w-full">
-                            <div class="absolute top-2 left-2 md:top-4 md:left-4 z-10 flex gap-1.5">
-                                <span class="px-2 py-0.5 bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white text-[8px] md:text-[10px] font-bold uppercase rounded-full">EDITORIAL</span>
+                    <div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall4.jpg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
                             </div>
-                            <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=600&auto=format&fit=crop" alt="Jashu Editorial Poster" class="w-full h-full object-cover opacity-90">
+                            <img src="wall4.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
                         </div>
-                        <div class="p-3 md:p-5 flex flex-col flex-grow w-full">
-                            <h4 class="text-gray-900 dark:text-white font-bold text-xs md:text-base mb-1 truncate w-full">Red Halftone</h4>
-                            <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs mb-3 line-clamp-2 font-light w-full break-words">A modern graphic design poster with selective color.</p>
-                            <button class="open-modal-btn flex items-center justify-between w-full mt-auto text-[9px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors group/btn" 
-                                data-title="Red Halftone Editorial"
-                                data-category="EDITORIAL"
-                                data-desc="A modern graphic design poster featuring a selective color effect overlaid onto a vibrant, deep red background with vintage halftone textures."
-                                data-img="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1200&auto=format&fit=crop"
-                                data-prompt="Portrait of a young Indian man with a sharp, confident jawline and dark black textured swept-back hair. Natural color rendering, professional key and fill lighting. He is wearing a light-colored, fitted slim-cut kurta pajama. Strong contrapposto stance, dramatic Dutch tilt camera angle, looking off-camera. He is overlaid onto a vibrant, deep red background featuring a subtle vintage halftone dot texture. Large, bold, beige sans-serif typography reading 'JASHU' runs sideways across the red background, partially tucked behind the subject. Editorial magazine cover style, edgy and bold composition, selective color effect, 8k resolution, ultra-detailed, 9:16 aspect ratio.">
-                                <span class="tracking-widest uppercase truncate">ACCESS</span>
-                                <i class="fas fa-arrow-right ml-1 text-brand-primary text-[8px] md:text-[10px] flex-shrink-0"></i>
-                            </button>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+                    <div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall5.jpg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall5.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall6.jpg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall6.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall7.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall7.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall8.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall8.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall9.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall9.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall10.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall10.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall11.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall11.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall12.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall12.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall13.jpg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall13.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall14.jpg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall14.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall15.jpg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall15.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall16.jpg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall16.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall17.jpg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall17.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall18.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall18.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall19.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall19.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall20.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall20.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall21.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall21.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall22.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall22.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall21.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall21.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall24.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall24.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall25.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall25.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall26.jpeg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall26.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall4.jpg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall4.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall4.jpg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall4.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall4.jpg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall4.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
+                        </div>
+                    </div>
+<div class="wallpaper-card bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 w-full shadow-sm hover:shadow-premium dark:hover:shadow-premium-dark cursor-pointer wallpaper-trigger" 
+                         data-category="cars minecraft dark" 
+                         data-highres="wall4.jpg" 
+                         data-filename="visionary-wallpaper-4.jpg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative aspect-[9/16] overflow-hidden bg-gray-200 dark:bg-black w-full">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="px-2 py-1 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md flex items-center gap-1 shadow-lg"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <img src="wall4.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px] pointer-events-none">
+                                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl"><i class="fas fa-expand"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-3 md:p-4 flex justify-between items-center w-full bg-gray-50 dark:bg-brand-card z-20">
+                            <span class="text-xs font-bold text-gray-900 dark:text-white truncate">Rendered Glass</span>
+                            <span class="text-[9px] text-brand-primary font-bold tracking-widest bg-brand-primary/10 px-2 py-0.5 rounded-full">4K</span>
                         </div>
                     </div>
 
-                    <div class="bg-gray-50 dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl md:rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300 w-full" data-aos="fade-up" data-aos-delay="500">
-                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-black w-full">
-                            <div class="absolute top-2 left-2 md:top-4 md:left-4 z-10 flex gap-1.5">
-                                <span class="px-2 py-0.5 bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white text-[8px] md:text-[10px] font-bold uppercase rounded-full">MEN</span>
-                            </div>
-                            <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=600&auto=format&fit=crop" alt="Executive Sunset" class="w-full h-full object-cover opacity-90">
-                        </div>
-                        <div class="p-3 md:p-5 flex flex-col flex-grow w-full">
-                            <h4 class="text-gray-900 dark:text-white font-bold text-xs md:text-base mb-1 truncate w-full">Executive Sunset</h4>
-                            <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs mb-3 line-clamp-2 font-light w-full break-words">A confident executive leaning against a luxury car.</p>
-                            <button class="open-modal-btn flex items-center justify-between w-full mt-auto text-[9px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors group/btn" 
-                                data-title="Executive Sunset"
-                                data-category="MEN"
-                                data-desc="An ultra-detailed cinematic shot of a mature, elegant man in a tailored suit leaning against a black luxury car during a golden hour sunset."
-                                data-img="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=1200&auto=format&fit=crop"
-                                data-prompt="A mature, elegant man in a sharp tailored suit leaning against a black luxury car. Sunset golden hour lighting, mountain backdrop. Confident expression. --focus: man_and_car --mood: confident_elegant --quality: ultra_detail --composition: leaning_on_car. Negative prompt: blurry, cartoonish, casual clothes, distorted car, poor reflections, unnatural skin tones, exaggerated lighting.">
-                                <span class="tracking-widest uppercase truncate">ACCESS</span>
-                                <i class="fas fa-arrow-right ml-1 text-brand-primary text-[8px] md:text-[10px] flex-shrink-0"></i>
-                            </button>
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -589,40 +1002,40 @@
             <div class="max-w-screen-xl mx-auto w-full" data-aos="fade-up">
                 <div class="text-center mb-10 md:mb-16">
                     <h2 class="font-heading text-3xl md:text-4xl font-extrabold mb-3 md:mb-4 text-gray-900 dark:text-white tracking-tight uppercase break-words">Creator Articles</h2>
-                    <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-light px-4">Advanced prompt engineering, technical syntax guides, and algorithmic strategies.</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-light px-4">Insights, aesthetics, and the best digital backgrounds for your workspace.</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                     <div class="bg-white dark:bg-brand-card rounded-2xl p-6 md:p-8 border border-gray-200 dark:border-brand-border flex flex-col w-full hover:-translate-y-1 transition-transform duration-300 shadow-sm">
-                        <span class="text-[10px] font-bold text-brand-primary tracking-widest uppercase mb-3">Engineering</span>
-                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">The Architecture of Brand Identity in AI</h3>
+                        <span class="text-[10px] font-bold text-brand-primary tracking-widest uppercase mb-3">Aesthetics</span>
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">The Psychology of Color in UI Design</h3>
                         <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-light mb-6 flex-grow leading-relaxed">
-                            Explore advanced linguistic structuring to ensure brand consistency across generative models. Learn how to dictate lighting, focal length, and color grading to outmaneuver competitors.
+                            Discover how the color grading of your device's wallpaper can directly impact your daily productivity and focus.
                         </p>
                         <a href="#" class="text-[11px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors flex items-center uppercase tracking-widest">
-                            Read Masterclass <i class="fas fa-arrow-right ml-2 text-brand-primary"></i>
+                            Read Article <i class="fas fa-arrow-right ml-2 text-brand-primary"></i>
                         </a>
                     </div>
 
                     <div class="bg-white dark:bg-brand-card rounded-2xl p-6 md:p-8 border border-gray-200 dark:border-brand-border flex flex-col w-full hover:-translate-y-1 transition-transform duration-300 shadow-sm">
-                        <span class="text-[10px] font-bold text-brand-primary tracking-widest uppercase mb-3">Algorithms</span>
-                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">Mastering 9:16 Aspect Ratios for Virality</h3>
+                        <span class="text-[10px] font-bold text-brand-primary tracking-widest uppercase mb-3">Hardware</span>
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">Why True Black Matters for OLED</h3>
                         <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-light mb-6 flex-grow leading-relaxed">
-                            Unlock the technical syntax behind high-retention Instagram Reels covers. We break down the exact camera angles and aesthetic keywords that trigger algorithmic prioritization.
+                            Learn the technical reasons why dark-themed wallpapers not only look sleeker but drastically improve your smartphone's battery life.
                         </p>
                         <a href="#" class="text-[11px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors flex items-center uppercase tracking-widest">
-                            Read Masterclass <i class="fas fa-arrow-right ml-2 text-brand-primary"></i>
+                            Read Article <i class="fas fa-arrow-right ml-2 text-brand-primary"></i>
                         </a>
                     </div>
 
                     <div class="bg-white dark:bg-brand-card rounded-2xl p-6 md:p-8 border border-gray-200 dark:border-brand-border flex flex-col w-full hover:-translate-y-1 transition-transform duration-300 shadow-sm md:col-span-2 lg:col-span-1">
-                        <span class="text-[10px] font-bold text-brand-primary tracking-widest uppercase mb-3">Syntax</span>
-                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">Bridging the Semantic Gap in Generation</h3>
+                        <span class="text-[10px] font-bold text-brand-primary tracking-widest uppercase mb-3">Resolution</span>
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">The 4K Difference Explained</h3>
                         <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-light mb-6 flex-grow leading-relaxed">
-                            A comprehensive technical deep-dive into resolving AI hallucinations. Discover how negative prompting and parameter weighting can force machines to perfectly render your creative vision.
+                            A deep dive into pixel density, aspect ratios, and why high-fidelity uncompressed images make a world of difference on modern displays.
                         </p>
                         <a href="#" class="text-[11px] md:text-xs font-bold text-gray-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors flex items-center uppercase tracking-widest">
-                            Read Masterclass <i class="fas fa-arrow-right ml-2 text-brand-primary"></i>
+                            Read Article <i class="fas fa-arrow-right ml-2 text-brand-primary"></i>
                         </a>
                     </div>
                 </div>
@@ -739,11 +1152,11 @@
                             </span>
                         </div>
                         <p class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 mb-4 leading-relaxed font-light break-words w-full px-4 sm:px-0">
-                            The premium destination for digital creators looking to elevate their professional presence with high-fidelity, engineered AI blueprints.
+                            The premium destination for digital creators looking to elevate their professional presence with high-fidelity, engineered digital assets.
                         </p>
                         
                         <div class="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-brand-card text-brand-primary text-[9px] md:text-[11px] font-semibold mb-6 border border-gray-200 dark:border-brand-border shadow-sm mx-auto sm:mx-0 w-fit max-w-full">
-                            <i class="fas fa-arrow-circle-down flex-shrink-0"></i> <span class="truncate break-words">Machine Learning & AI</span>
+                            <i class="fas fa-arrow-circle-down flex-shrink-0"></i> <span class="truncate break-words">Digital Aesthetics</span>
                         </div>
 
                         <div class="flex justify-center sm:justify-start gap-4 w-full mt-4">
@@ -763,8 +1176,7 @@
                         <h4 class="font-bold text-sm md:text-base mb-4 md:mb-6 text-gray-900 dark:text-white break-words">Explore</h4>
                         <ul class="space-y-3 md:space-y-4 w-full">
                             <li><a href="#" class="text-xs md:text-[13px] text-brand-primary font-medium hover:underline transition-all break-words">Home</a></li>
-                            <li><a href="#archive" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Prompt Archive</a></li>
-                            <li><a href="wallpapers.html" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Wallpapers</a></li>
+                            <li><a href="#wallpapers" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Wallpapers</a></li>
                             <li><a href="#blog" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Creator Articles</a></li>
                             <li><a href="#contact" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Contact Us</a></li>
                         </ul>
@@ -773,8 +1185,7 @@
                     <div class="flex flex-col items-center sm:items-start w-full">
                         <h4 class="font-bold text-sm md:text-base mb-4 md:mb-6 text-gray-900 dark:text-white break-words">Creative Guides</h4>
                         <ul class="space-y-3 md:space-y-4 w-full">
-                            <li><a href="#" class="text-xs md:text-[13px] text-brand-primary font-medium hover:underline transition-all break-words">Writing Effective Prompts</a></li>
-                            <li><a href="#" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Instagram AI Strategies</a></li>
+                            <li><a href="#" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Instagram Aesthetic Strategies</a></li>
                             <li><a href="#" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Engineering Basics</a></li>
                             <li><a href="#" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Image Styles Guide</a></li>
                         </ul>
@@ -785,7 +1196,6 @@
                         <ul class="space-y-3 md:space-y-4 w-full">
                             <li><a href="privacy.html" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Privacy Policy</a></li>
                             <li><a href="terms.html" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Terms & Conditions</a></li>
-                            <li><a href="#" class="text-xs md:text-[13px] text-gray-500 dark:text-gray-400 font-light hover:text-brand-primary transition-colors break-words">Cookie Policy</a></li>
                         </ul>
                     </div>
                 </div>
@@ -803,80 +1213,17 @@
 
     </main> 
 
-    <div id="asset-modal" class="fixed inset-0 z-[100] bg-white/95 dark:bg-brand-dark/95 backdrop-blur-xl hidden w-full h-full overflow-y-auto transition-opacity">
-        <div class="max-w-screen-xl mx-auto px-4 lg:px-8 py-6 md:py-10 min-h-screen flex flex-col w-full">
-            
-            <button id="close-modal" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white flex items-center gap-2 text-[10px] md:text-xs font-semibold uppercase tracking-widest mb-6 md:mb-12 w-fit transition-colors">
-                <i class="fas fa-arrow-left flex-shrink-0"></i> Back to Archive
-            </button>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-24 items-start w-full">
-                <div class="flex flex-col order-2 lg:order-1 w-full max-w-full">
-                    <span id="modal-category" class="text-brand-primary text-[9px] md:text-[10px] font-bold uppercase tracking-widest mb-2 md:mb-4 break-words">Category</span>
-                    <h2 id="modal-title" class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4 leading-tight tracking-tight break-words w-full">Title</h2>
-                    <p id="modal-desc" class="text-gray-600 dark:text-gray-400 text-xs md:text-sm lg:text-base mb-6 md:mb-10 leading-relaxed font-light break-words w-full">Description goes here.</p>
-
-                    <button id="primary-unlock-btn" class="w-full md:w-fit max-w-full px-4 md:px-6 py-3 md:py-3.5 bg-brand-primary hover:bg-brand-primaryHover text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 md:gap-3 mb-8 md:mb-12 text-xs md:text-sm shadow-sm cursor-pointer">
-                        <i id="primary-icon" class="fas fa-unlock-alt flex-shrink-0"></i> <span id="primary-btn-text" class="break-words">Unlock Asset Prompt</span>
-                    </button>
-
-                    <div class="w-full">
-                        <div class="flex items-center gap-2 text-gray-900 dark:text-white text-[10px] md:text-xs font-bold tracking-widest uppercase mb-3 md:mb-4 break-words w-full">
-                            <i class="far fa-file-code flex-shrink-0"></i> Technical Blueprint
-                        </div>
-                        
-                        <div class="bg-gray-50 dark:bg-[#0F1423] border border-gray-200 dark:border-brand-border rounded-xl p-4 md:p-6 lg:p-10 flex flex-col items-center justify-center min-h-[180px] md:min-h-[220px] lg:min-h-[260px] w-full">
-                            
-                            <div id="prompt-state-initial" class="flex flex-col items-center gap-3 md:gap-4 w-full">
-                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-[#151A2C] flex items-center justify-center border border-gray-200 dark:border-brand-border shadow-sm flex-shrink-0">
-                                    <i class="fas fa-lock text-gray-400 dark:text-gray-500 text-base md:text-lg"></i>
-                                </div>
-                                <button id="secondary-unlock-btn" class="w-full md:w-auto px-4 md:px-5 py-2.5 bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-brand-dark dark:hover:bg-gray-200 rounded-lg font-semibold transition-colors text-[11px] md:text-xs lg:text-sm shadow-sm break-words">
-                                    Initiate Unlock Sequence
-                                </button>
-                            </div>
-
-                            <div id="prompt-state-timer" class="hidden flex-col items-center gap-4 md:gap-5 w-full">
-                                <div class="relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex-shrink-0">
-                                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                                        <circle cx="50" cy="50" r="45" fill="none" class="stroke-gray-200 dark:stroke-brand-border" stroke-width="4"></circle>
-                                        <circle id="timer-ring" cx="50" cy="50" r="45" fill="none" class="stroke-brand-primary timer-ring" stroke-width="4" stroke-dasharray="283" stroke-dashoffset="0"></circle>
-                                    </svg>
-                                    <div class="absolute inset-0 flex items-center justify-center">
-                                        <span id="countdown-number" class="text-gray-900 dark:text-white font-bold text-sm md:text-base lg:text-lg">15</span>
-                                    </div>
-                                </div>
-                                <p class="text-gray-500 dark:text-gray-400 text-[10px] md:text-xs lg:text-sm font-medium text-center break-words w-full">Decrypting... please wait <span id="countdown-text" class="text-gray-900 dark:text-white font-bold">15</span>s</p>
-                            </div>
-
-                            <div id="prompt-state-unlocked" class="hidden w-full flex-col w-full">
-                                <div id="capture-container" class="bg-white dark:bg-[#050505] p-4 md:p-5 rounded-lg border border-gray-200 dark:border-brand-border mb-3 md:mb-4 max-h-[150px] overflow-y-auto custom-scrollbar w-full">
-                                    <p id="actual-prompt-text" class="text-gray-800 dark:text-gray-300 text-[10px] md:text-xs lg:text-sm leading-relaxed font-mono select-all break-words w-full"></p>
-                                </div>
-                                
-                                <div class="w-full flex flex-col gap-2">
-                                    <button id="copy-unlocked-btn" class="w-full py-2.5 md:py-3 bg-brand-primary hover:bg-brand-primaryHover text-white rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 text-[10px] md:text-xs lg:text-sm shadow-sm">
-                                        <span id="copy-btn-text" class="break-words">Copy Text</span>
-                                        <i id="copy-btn-icon" class="far fa-copy flex-shrink-0"></i>
-                                    </button>
-                                    <div class="grid grid-cols-2 gap-2 w-full">
-                                        <button id="download-pdf-btn" class="w-full py-2.5 md:py-3 bg-gray-200 hover:bg-gray-300 dark:bg-[#151A2C] dark:hover:bg-[#1f253d] text-gray-900 dark:text-white rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 text-[10px] md:text-xs lg:text-sm shadow-sm">
-                                            <i class="far fa-file-pdf"></i> PDF
-                                        </button>
-                                        <button id="download-img-btn" class="w-full py-2.5 md:py-3 bg-gray-200 hover:bg-gray-300 dark:bg-[#151A2C] dark:hover:bg-[#1f253d] text-gray-900 dark:text-white rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 text-[10px] md:text-xs lg:text-sm shadow-sm">
-                                            <i class="far fa-image"></i> Image
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-gray-200 dark:border-brand-border shadow-premium dark:shadow-premium-dark relative aspect-[4/5] sm:aspect-auto sm:h-[45vh] md:h-[60vh] lg:h-[75vh] order-1 lg:order-2 bg-gray-100 dark:bg-brand-surface mt-4 lg:mt-0">
-                    <img id="modal-image" src="" alt="Asset Image" class="w-full h-full object-cover">
-                </div>
-            </div>
+    <div id="lightbox" class="fixed inset-0 z-[99999] bg-black/95 hidden flex-col items-center justify-center backdrop-blur-xl opacity-0 transition-opacity duration-300">
+        <button id="close-lightbox" class="absolute top-6 right-6 md:top-8 md:right-8 text-white/70 hover:text-white text-3xl md:text-4xl transition-colors outline-none z-50">
+            &times;
+        </button>
+        
+        <img id="lightbox-img" src="" class="max-h-[75vh] max-w-[90vw] object-contain rounded-lg shadow-2xl transition-transform duration-300 scale-95 border border-white/10">
+        
+        <div class="mt-8">
+            <a id="lightbox-download" href="" download target="_blank" class="px-8 py-3.5 md:px-10 md:py-4 bg-brand-primary text-white rounded-full text-xs md:text-sm font-bold shadow-glow flex items-center gap-3 hover:bg-brand-primaryHover transition-all duration-300 hover:-translate-y-1">
+                <i class="fas fa-download text-lg"></i> Download High-Res 4K
+            </a>
         </div>
     </div>
 
@@ -886,6 +1233,7 @@
             history.scrollRestoration = 'manual';
         }
 
+        // --- INTRO LOADER ---
         window.addEventListener('load', () => {
             const loader = document.getElementById('intro-overlay');
             
@@ -942,14 +1290,7 @@
             }, 30); 
         });
 
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-        });
-
+        // Theme Toggle Logic
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const htmlElement = document.documentElement;
@@ -981,188 +1322,91 @@
             }
         });
 
-        const modal = document.getElementById('asset-modal');
-        const closeModalBtn = document.getElementById('close-modal');
-        const body = document.body;
-        let countdownInterval;
+        // Wallpaper Filtering Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const wallpaperCards = document.querySelectorAll('.wallpaper-card');
 
-        const stateInitial = document.getElementById('prompt-state-initial');
-        const stateTimer = document.getElementById('prompt-state-timer');
-        const stateUnlocked = document.getElementById('prompt-state-unlocked');
-        
-        const primaryBtn = document.getElementById('primary-unlock-btn');
-        const primaryBtnText = document.getElementById('primary-btn-text');
-        const primaryIcon = document.getElementById('primary-icon');
-        const secondaryBtn = document.getElementById('secondary-unlock-btn');
-        
-        const ring = document.getElementById('timer-ring');
-        const numCenter = document.getElementById('countdown-number');
-        const numText = document.getElementById('countdown-text');
-        
-        const currentPromptData = { text: "", title: "" };
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update Button Styles
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-primary', 'text-white', 'shadow-glow');
+                    b.classList.add('bg-gray-100', 'dark:bg-brand-card', 'text-gray-600', 'dark:text-gray-400');
+                });
+                btn.classList.remove('bg-gray-100', 'dark:bg-brand-card', 'text-gray-600', 'dark:text-gray-400');
+                btn.classList.add('bg-brand-primary', 'text-white', 'shadow-glow');
 
-        document.querySelectorAll('.open-modal-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                document.getElementById('modal-title').innerText = this.getAttribute('data-title');
-                document.getElementById('modal-category').innerText = this.getAttribute('data-category');
-                document.getElementById('modal-desc').innerText = this.getAttribute('data-desc');
-                document.getElementById('modal-image').src = this.getAttribute('data-img');
-                
-                currentPromptData.text = this.getAttribute('data-prompt');
-                currentPromptData.title = this.getAttribute('data-title').replace(/\s+/g, '-').toLowerCase();
-
-                resetModalUI();
-                modal.classList.remove('hidden');
-                body.style.overflow = 'hidden'; 
+                // Filter Cards
+                const filter = btn.getAttribute('data-filter');
+                wallpaperCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
         });
 
-        closeModalBtn.addEventListener('click', () => {
-            modal.classList.add('hidden');
-            body.style.overflow = 'auto';
-            clearInterval(countdownInterval); 
+        // ✅ LIGHTBOX JAVASCRIPT LOGIC
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxDownload = document.getElementById('lightbox-download');
+        const closeLightbox = document.getElementById('close-lightbox');
+        const body = document.body;
+
+        // Open Lightbox when clicking a wallpaper card
+        document.querySelectorAll('.wallpaper-trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                const highResUrl = trigger.getAttribute('data-highres');
+                const fileName = trigger.getAttribute('data-filename');
+                
+                // Set the image and download link
+                lightboxImg.src = highResUrl;
+                lightboxDownload.href = highResUrl;
+                lightboxDownload.setAttribute('download', fileName);
+
+                // Show Lightbox
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+                
+                // Small delay to allow CSS transitions to trigger
+                setTimeout(() => {
+                    lightbox.classList.remove('opacity-0');
+                    lightboxImg.classList.remove('scale-95');
+                    lightboxImg.classList.add('scale-100');
+                }, 10);
+                
+                // Lock background scrolling
+                body.style.overflow = 'hidden';
+            });
         });
 
-        function startUnlock() {
-            let duration = 15;
-            let timer = duration;
-
-            stateInitial.classList.add('hidden');
-            stateTimer.classList.remove('hidden');
-            stateTimer.classList.add('flex');
-
-            primaryBtn.classList.remove('bg-brand-primary', 'hover:bg-brand-primaryHover', 'text-white');
-            primaryBtn.classList.add('bg-gray-100', 'dark:bg-[#0F1423]', 'cursor-not-allowed', 'text-gray-400', 'border', 'border-gray-200', 'dark:border-brand-border');
-            primaryIcon.className = "fas fa-circle-notch fa-spin text-brand-primary"; 
-            primaryBtnText.innerText = `Decrypting (${timer}s)`;
+        // Close Lightbox function
+        const closeBox = () => {
+            lightbox.classList.add('opacity-0');
+            lightboxImg.classList.remove('scale-100');
+            lightboxImg.classList.add('scale-95');
             
-            ring.style.strokeDashoffset = "0";
-            numCenter.innerText = timer;
-            numText.innerText = timer;
+            // Wait for fade out animation to finish before hiding
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                body.style.overflow = ''; // Restore background scrolling
+                lightboxImg.src = ''; // Clear image to save memory
+            }, 300);
+        };
 
-            countdownInterval = setInterval(() => {
-                timer--;
-                primaryBtnText.innerText = `Decrypting (${timer}s)`;
-                numCenter.innerText = timer;
-                numText.innerText = timer;
-                
-                const offset = 283 - (283 * (timer / duration));
-                ring.style.strokeDashoffset = offset;
-
-                if (timer <= 0) {
-                    clearInterval(countdownInterval);
-                    showUnlockedPrompt();
-                }
-            }, 1000);
-        }
-
-        primaryBtn.addEventListener('click', () => {
-            if(!primaryBtn.classList.contains('cursor-not-allowed') && !primaryBtn.classList.contains('bg-[#10b981]')) {
-                startUnlock();
+        // Click X to close
+        closeLightbox.addEventListener('click', closeBox);
+        
+        // Click outside the image to close
+        lightbox.addEventListener('click', (e) => {
+            if(e.target === lightbox) {
+                closeBox();
             }
         });
-        secondaryBtn.addEventListener('click', startUnlock);
 
-        function showUnlockedPrompt() {
-            stateTimer.classList.remove('flex');
-            stateTimer.classList.add('hidden');
-            
-            stateUnlocked.classList.remove('hidden');
-            stateUnlocked.classList.add('flex');
-            
-            document.getElementById('actual-prompt-text').innerText = currentPromptData.text;
-
-            primaryBtn.classList.remove('bg-gray-100', 'dark:bg-[#0F1423]', 'cursor-not-allowed', 'text-gray-400', 'border', 'border-gray-200', 'dark:border-brand-border');
-            primaryBtn.classList.add('bg-[#10b981]', 'text-white', 'cursor-default'); 
-            primaryIcon.className = "fas fa-check";
-            primaryBtnText.innerText = "Blueprint Unlocked";
-        }
-
-        function resetModalUI() {
-            clearInterval(countdownInterval);
-            
-            stateInitial.classList.remove('hidden');
-            stateInitial.classList.add('flex');
-            stateTimer.classList.remove('flex');
-            stateTimer.classList.add('hidden');
-            stateUnlocked.classList.remove('flex');
-            stateUnlocked.classList.add('hidden');
-
-            primaryBtn.className = "w-full md:w-fit max-w-full px-4 md:px-6 py-3 md:py-3.5 bg-brand-primary hover:bg-brand-primaryHover text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 md:gap-3 mb-8 md:mb-12 text-xs md:text-sm shadow-sm cursor-pointer";
-            primaryIcon.className = "fas fa-unlock-alt";
-            primaryBtnText.innerText = "Unlock Asset Prompt";
-            
-            ring.style.strokeDashoffset = "0";
-            
-            const copyText = document.getElementById('copy-btn-text');
-            const copyIcon = document.getElementById('copy-btn-icon');
-            copyText.innerText = "Copy Text";
-            copyIcon.className = "far fa-copy flex-shrink-0";
-        }
-
-        document.getElementById('copy-unlocked-btn').addEventListener('click', function() {
-            const copyText = document.getElementById('copy-btn-text');
-            const copyIcon = document.getElementById('copy-btn-icon');
-            
-            navigator.clipboard.writeText(currentPromptData.text).then(() => {
-                copyText.innerText = 'COPIED!';
-                copyIcon.className = 'fas fa-check flex-shrink-0';
-                
-                setTimeout(() => {
-                    copyText.innerText = 'Copy Text';
-                    copyIcon.className = 'far fa-copy flex-shrink-0';
-                }, 2000);
-            });
-        });
-
-        document.getElementById('download-img-btn').addEventListener('click', function() {
-            const captureArea = document.getElementById('capture-container');
-            const originalMaxHeight = captureArea.style.maxHeight;
-            captureArea.style.maxHeight = 'none'; 
-            captureArea.style.overflow = 'visible';
-
-            html2canvas(captureArea, {
-                backgroundColor: htmlElement.classList.contains('dark') ? '#050505' : '#ffffff',
-                scale: 2 
-            }).then(canvas => {
-                let link = document.createElement('a');
-                link.download = `visionary-syntax-${currentPromptData.title}.png`;
-                link.href = canvas.toDataURL("image/png");
-                link.click();
-                captureArea.style.maxHeight = originalMaxHeight;
-                captureArea.style.overflow = 'auto';
-            });
-        });
-
-        document.getElementById('download-pdf-btn').addEventListener('click', function() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
-            const captureArea = document.getElementById('capture-container');
-            const originalMaxHeight = captureArea.style.maxHeight;
-            
-            captureArea.style.maxHeight = 'none'; 
-            captureArea.style.overflow = 'visible';
-
-            html2canvas(captureArea, {
-                backgroundColor: htmlElement.classList.contains('dark') ? '#050505' : '#ffffff',
-                scale: 2
-            }).then(canvas => {
-                const imgData = canvas.toDataURL('image/png');
-                const imgProps = doc.getImageProperties(imgData);
-                const pdfWidth = doc.internal.pageSize.getWidth() - 20; 
-                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-                
-                doc.setFontSize(16);
-                doc.text(`Visionary Syntax: ${currentPromptData.title.replace(/-/g, ' ').toUpperCase()}`, 10, 15);
-                doc.addImage(imgData, 'PNG', 10, 25, pdfWidth, pdfHeight);
-                doc.save(`visionary-syntax-${currentPromptData.title}.pdf`);
-                
-                captureArea.style.maxHeight = originalMaxHeight;
-                captureArea.style.overflow = 'auto';
-            });
-        });
     </script>
 </body>
 </html>
